@@ -6,10 +6,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-public class HelloController {
-    @GetMapping("/hello")  //将其与下方hello方法关联
-    public String hello(@RequestParam(name = "name")String name, Model model){
-        model.addAttribute("name",name);
-        return "hello";
+public class IndexController {
+    @GetMapping("/")  //将其与下方hello方法关联
+    public String index(){
+        return "index";
     };
 }
