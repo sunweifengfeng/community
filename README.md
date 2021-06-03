@@ -13,8 +13,24 @@
 [Okhttp 用java实现Post](https://square.github.io/okhttp/)
 <br/>
 [MySQL 学习](https://www.runoob.com/mysql/mysql-create-database.html)
-
+<brl>
+[Spring boot学习文档](https://docs.spring.io/spring-boot/docs/2.0.0.RC1/reference/htmlsingle/)
 ## 工具
 [git download](https://git-scm.com/download)
 <br/>
 [mvn 下载jar](https://mvnrepository.com/artifact/com.squareup.okio/okio/3.0.0-alpha.5)
+
+## 脚本
+```sql
+create table USER
+(
+	ID INTEGER auto_increment,
+	ACCOUNT_ID VARCHAR(100),
+	NAME VARCHAR(50),
+	TOKEN CHAR(36),
+	GMT_CREATE BIGINT,
+	GMT_MOD BIGINT,
+	constraint USER_PK
+		primary key (ID)
+);
+```

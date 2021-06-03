@@ -2,6 +2,8 @@ package life.kobefengfeng.community.community.controller;
 
 import life.kobefengfeng.community.community.dto.AccessTokenDTO;
 import life.kobefengfeng.community.community.dto.GithubUser;
+import life.kobefengfeng.community.community.mapper.UserMapper;
+import life.kobefengfeng.community.community.model.User;
 import life.kobefengfeng.community.community.provider.GithubProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.UUID;
 
 @Controller
 public class AuthorizeController {
@@ -23,6 +26,8 @@ public class AuthorizeController {
     @Value("${github.redirect.uri}")
     private String redirectUri;
 
+    @Autowired
+    private UserMapper userMapper;
 
     @GetMapping("/callback")
     public String callback(@RequestParam(name="code")String code,
@@ -35,10 +40,17 @@ public class AuthorizeController {
         accessTokenDTO.setState(state);
         accessTokenDTO.setClient_secret(clientSecret);
         String accessToken = githubProvider.getAccessToken(accessTokenDTO);
-        GithubUser user = githubProvider.getUser(accessToken);
-        if(user != null){
+        GithubUser githubUser = githubProvider.getUser(accessToken);
+        if(githubUser != null){
+            User user = new User();
+            user.setToken(UUID.randomUUID().toString());
+            user.setName(githubUser.getName());
+            user.setAccountId(String.valueOf(githubUser.getId()));
+            user.setGmtCreate(System.currentTimeMillis());
+            user.setGmtMod(user.getGmtCreate());
+            userMapper.insert(user);
             //登录成功 写cookies和session
-            request.getSession().setAttribute("user",user);//对user对象赋值，为user，第一个参数是对象名称，第二个参数是赋值给第一个对象
+            request.getSession().setAttribute("user",githubUser);//对user对象赋值，为user，第一个参数是对象名称，第二个参数是赋值给第一个对象
             return "redirect:/";
         }
         else{
