@@ -19,18 +19,20 @@
 [git download](https://git-scm.com/download)
 <br/>
 [mvn 下载jar](https://mvnrepository.com/artifact/com.squareup.okio/okio/3.0.0-alpha.5)
-
+<br/>
+[Flyaway](https://flywaydb.org/)
 ## 脚本
 ```sql
 create table USER
 (
-	ID INTEGER auto_increment,
+	ID INT AUTO_INCREMENT PRIMARY KEY NOT NULL ,
 	ACCOUNT_ID VARCHAR(100),
 	NAME VARCHAR(50),
 	TOKEN CHAR(36),
 	GMT_CREATE BIGINT,
-	GMT_MOD BIGINT,
-	constraint USER_PK
-		primary key (ID)
+	GMT_MOD BIGINT
 );
+```
+```bash
+mvn flyway:migrate
 ```

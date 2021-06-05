@@ -31,7 +31,7 @@ public class AuthorizeController {
     @Autowired
     private UserMapper userMapper;
 
-    @GetMapping("/callback")
+    @GetMapping("/callback")           //进入登录地址中，因为前文配置了登录状态进入callback地址
     public String callback(@RequestParam(name="code")String code,
                            @RequestParam(name="state")String state,
                            HttpServletRequest request,
@@ -54,7 +54,6 @@ public class AuthorizeController {
             user.setGmtMod(user.getGmtCreate());
             userMapper.insert(user);
             response.addCookie(new Cookie("token",token));
-            request.getSession().setAttribute("user",githubUser);//对user对象赋值，为user，第一个参数是对象名称，第二个参数是赋值给第一个对象
             return "redirect:/";
         }
         else{
