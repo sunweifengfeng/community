@@ -52,8 +52,9 @@ public class AuthorizeController {
             user.setAccountId(String.valueOf(githubUser.getId()));
             user.setGmtCreate(System.currentTimeMillis());
             user.setGmtMod(user.getGmtCreate());
-            userMapper.insert(user);
-            response.addCookie(new Cookie("token",token));
+            user.setAvatarUrl(githubUser.getAvatar_url());
+            userMapper.insert(user);//将用户信息插入到数据库中
+            response.addCookie(new Cookie("token",token));//并将token信息写入cookie中
             return "redirect:/";
         }
         else{

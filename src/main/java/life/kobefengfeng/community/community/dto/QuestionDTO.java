@@ -1,15 +1,16 @@
-package life.kobefengfeng.community.community.model;
+package life.kobefengfeng.community.community.dto;
 
+import life.kobefengfeng.community.community.model.User;
 import lombok.Data;
 
 /**
  * @Author KobeFL
  * @Description TODO
- * @Date 2021/6/5 17:26
+ * @Date 2021/6/6 11:43
  * @Version 1.0
  */
 @Data
-public class Question {
+public class QuestionDTO {
     private Integer id;
     private String title;
     private String description;
@@ -20,4 +21,5 @@ public class Question {
     private Integer viewCount;
     private Integer commentCount;
     private Integer likeCount;
+    private User user;
 }

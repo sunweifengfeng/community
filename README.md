@@ -21,6 +21,12 @@
 [mvn 下载jar](https://mvnrepository.com/artifact/com.squareup.okio/okio/3.0.0-alpha.5)
 <br/>
 [Flyaway](https://flywaydb.org/)
+<br/>
+[Lambok](https://projectlombok.org/setup/maven)
+<br/>
+[thymelef](https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#setting-attribute-values)
+<br/>
+[Mybatis](http://mybatis.org/spring-boot-starter/mybatis-spring-boot-autoconfigure/)
 ## 脚本
 ```sql
 create table USER
