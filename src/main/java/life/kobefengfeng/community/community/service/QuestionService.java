@@ -1,5 +1,6 @@
 package life.kobefengfeng.community.community.service;
 
+import life.kobefengfeng.community.community.dto.PaginationDTO;
 import life.kobefengfeng.community.community.dto.QuestionDTO;
 import life.kobefengfeng.community.community.mapper.QuestionMapper;
 import life.kobefengfeng.community.community.mapper.UserMapper;
@@ -26,10 +27,25 @@ public class QuestionService {
 
     @Autowired
     private UserMapper userMapper;
+//查询数据库
+    public PaginationDTO list(Integer page, Integer size) {
 
-    public List<QuestionDTO> list() {
-        List<Question> questions = questionMapper.list();//查到所有question对象
+        //查询数据库之前判断页面是否符合要求
+        PaginationDTO paginationDTO = new PaginationDTO();
+        Integer totalCount = questionMapper.count();
+        paginationDTO.setPagination(totalCount,page,size);//创建一个方法，根据三个参数计算页面展示所需要的元素
+        if(page<1){
+            page = 1;
+        }
+        if(page > paginationDTO.getTotalPage()){
+            page = paginationDTO.getTotalPage();
+        }
+        //size*(page-1)
+        Integer offset = size*(page-1);
+        List<Question> questions = questionMapper.list(offset,size);//查到所有question对象
         List<QuestionDTO> questionDTOList = new ArrayList<>();
+
+        //questionDTO的建立就是比question多了一个user  是为了查询user的avatarUrl
         for (Question question : questions) {            //循环question对象
             User user = userMapper.findByID(question.getCreator());//根据创建者问题的creator在user表中查询id号 就是avatar_url的id，返回user对象
             QuestionDTO questionDTO = new QuestionDTO();
@@ -37,6 +53,7 @@ public class QuestionService {
             questionDTO.setUser(user);
             questionDTOList.add(questionDTO);
         }
-        return questionDTOList;
+        paginationDTO.setQuestions(questionDTOList);
+        return paginationDTO;
     }
 }
