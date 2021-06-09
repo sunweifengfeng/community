@@ -29,7 +29,7 @@ public class IndexController {
     public String index(HttpServletRequest request,
                         Model model,
                         @RequestParam(name = "page",defaultValue = "1") Integer page, //页码数   获取页面参数
-                        @RequestParam(name = "size",defaultValue = "2") Integer size  //每页的话题数
+                        @RequestParam(name = "size",defaultValue = "5") Integer size  //每页的话题数
                         ){
         Cookie[] cookies = request.getCookies();
         if(cookies != null && cookies.length != 0)

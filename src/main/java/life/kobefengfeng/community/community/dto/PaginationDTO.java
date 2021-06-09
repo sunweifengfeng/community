@@ -24,19 +24,8 @@ public class PaginationDTO {
     private Integer totalPage;//展示所有的页数。显示的页数,每页5个，如果12行，则每页显示5个时，显示3页
 
 
-    public void setPagination(Integer totalCount, Integer page, Integer size) {
-        if(totalCount % size == 0){
-            totalPage = totalCount / size;
-        }else{
-            totalPage = totalCount / size + 1;
-        }
-        //容错处理
-        if(page<1){
-            page = 1;
-        }
-        if(page > totalPage){
-            page = totalPage;
-        }
+    public void setPagination(Integer totalPage, Integer page) {
+        this.totalPage = totalPage;
         this.page = page;//把当前页赋值下来
         pages.add(page);
         for(int i = 1;i <= 3;i++){

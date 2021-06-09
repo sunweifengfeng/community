@@ -33,13 +33,20 @@ public class QuestionService {
         //查询数据库之前判断页面是否符合要求
         PaginationDTO paginationDTO = new PaginationDTO();
         Integer totalCount = questionMapper.count();
-        paginationDTO.setPagination(totalCount,page,size);//创建一个方法，根据三个参数计算页面展示所需要的元素
+        Integer totalPage;
+        if(totalCount % size == 0){
+            totalPage = totalCount / size;
+        }else{
+            totalPage = totalCount / size + 1;
+        }
+
         if(page<1){
             page = 1;
         }
-        if(page > paginationDTO.getTotalPage()){
-            page = paginationDTO.getTotalPage();
+        if(page > totalPage){
+            page = totalPage;
         }
+        paginationDTO.setPagination(totalPage,page);//创建一个方法，根据2个参数计算页面展示所需要的元素
         //size*(page-1)
         Integer offset = size*(page-1);
         List<Question> questions = questionMapper.list(offset,size);//查到所有question对象
@@ -47,7 +54,44 @@ public class QuestionService {
 
         //questionDTO的建立就是比question多了一个user  是为了查询user的avatarUrl
         for (Question question : questions) {            //循环question对象
-            User user = userMapper.findByID(question.getCreator());//根据创建者问题的creator在user表中查询id号 就是avatar_url的id，返回user对象
+            User user = userMapper.findById(question.getCreator());//根据创建者问题的creator在user表中查询id号 就是avatar_url的id，返回user对象
+            QuestionDTO questionDTO = new QuestionDTO();
+            BeanUtils.copyProperties(question,questionDTO);//把question里的所有对象放到questionDTO中
+            questionDTO.setUser(user);
+            questionDTOList.add(questionDTO);
+        }
+        paginationDTO.setQuestions(questionDTOList);
+        return paginationDTO;
+    }
+
+    public PaginationDTO list(Integer id, Integer page, Integer size) {
+        //查询数据库之前判断页面是否符合要求
+        PaginationDTO paginationDTO = new PaginationDTO();
+        Integer totalCount = questionMapper.countById(id);
+        Integer totalPage;
+        if(totalCount % size == 0){
+            totalPage = totalCount / size;
+        }else{
+            totalPage = totalCount / size + 1;
+        }
+
+        if(page<1){
+            page = 1;
+        }
+        if(page > totalPage){
+            page = totalPage;
+        }
+
+        paginationDTO.setPagination(totalPage,page);//创建一个方法，根据三个参数计算页面展示所需要的元素
+
+        //size*(page-1)
+        Integer offset = size*(page-1);
+        List<Question> questions = questionMapper.listById(id,offset,size);//查到所有question对象
+        List<QuestionDTO> questionDTOList = new ArrayList<>();
+
+        //questionDTO的建立就是比question多了一个user  是为了查询user的avatarUrl
+        for (Question question : questions) {            //循环question对象
+            User user = userMapper.findById(question.getCreator());//根据创建者问题的creator在user表中查询id号 就是avatar_url的id，返回user对象
             QuestionDTO questionDTO = new QuestionDTO();
             BeanUtils.copyProperties(question,questionDTO);//把question里的所有对象放到questionDTO中
             questionDTO.setUser(user);
