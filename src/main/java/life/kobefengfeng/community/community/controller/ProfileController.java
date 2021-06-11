@@ -1,7 +1,6 @@
 package life.kobefengfeng.community.community.controller;
 
 import life.kobefengfeng.community.community.dto.PaginationDTO;
-import life.kobefengfeng.community.community.mapper.UserMapper;
 import life.kobefengfeng.community.community.model.User;
 import life.kobefengfeng.community.community.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +10,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 
 /**
@@ -22,8 +20,6 @@ import javax.servlet.http.HttpServletRequest;
  */
 @Controller
 public class ProfileController {
-    @Autowired
-    private UserMapper userMapper;
 
     @Autowired
     private QuestionService questionService;
@@ -35,21 +31,8 @@ public class ProfileController {
                           @RequestParam(name = "page",defaultValue = "1") Integer page, //页码数   获取页面参数
                           @RequestParam(name = "size",defaultValue = "5") Integer size  //每页的话题数
                           ){  //action是从页面获取到的
-        User user = null;
-        Cookie[] cookies = request.getCookies();
-        if(cookies != null && cookies.length != 0)
-        {
-            for (Cookie cookie : cookies) {
-                if(cookie.getName().equals("token")){
-                    String token = cookie.getValue();
-                    user = userMapper.findByToken(token);//从数据库中查找有无此token值
-                    if(user != null){
-                        request.getSession().setAttribute("user",user);//登录成功，则将user信息写入到session中，在indexhtml中显示了session的user信息
-                    }
-                    break;
-                }
-            }
-        }
+
+        User user = (User) request.getSession().getAttribute("user");//获取写入到session中的user对象，由于是Object类型的，要对其进行强制类型转换
         //如果未登录成功，则回到首页
         if(user == null){
             return "redirect:/";
@@ -63,7 +46,7 @@ public class ProfileController {
             model.addAttribute("sectionName","最新回复");
         }
 
-        PaginationDTO paginationDTO = questionService.list(user.getId(), page, size);
+        PaginationDTO paginationDTO = questionService.list(user.getId(), page, size);//根据用户的id,在question表中查询creator等于id的所有问题的数量，此时id是变换的，所以查不到问题
         model.addAttribute("pagination",paginationDTO);
         return "profile";
     }

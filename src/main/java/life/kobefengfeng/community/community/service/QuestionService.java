@@ -67,7 +67,7 @@ public class QuestionService {
     public PaginationDTO list(Integer id, Integer page, Integer size) {
         //查询数据库之前判断页面是否符合要求
         PaginationDTO paginationDTO = new PaginationDTO();
-        Integer totalCount = questionMapper.countById(id);
+        Integer totalCount = questionMapper.countById(id);//根据用户的id,在question表中查询creator等于id的所有问题的数量
         Integer totalPage;
         if(totalCount % size == 0){
             totalPage = totalCount / size;
@@ -99,5 +99,15 @@ public class QuestionService {
         }
         paginationDTO.setQuestions(questionDTOList);
         return paginationDTO;
+    }
+
+    public QuestionDTO getById(Integer id) {
+        Question question = questionMapper.getById(id);//
+        QuestionDTO questionDTO = new QuestionDTO();
+        BeanUtils.copyProperties(question,questionDTO);//把question里的所有对象放到questionDTO中
+        User user = userMapper.findById(question.getCreator());//根据创建者问题的creator在user表中查询id号 就是avatar_url的id，返回user对象
+        questionDTO.setUser(user);
+        return questionDTO;
+
     }
 }

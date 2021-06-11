@@ -31,4 +31,7 @@ public interface QuestionMapper {
 
     @Select("select count(1) from question where creator = #{id}")
     Integer countById(@Param(value = "id") Integer id);
+
+    @Select("select * from question where id = #{id}")//where后的id是question表中的字段名id，#{id}是下方传入的参数id
+    Question getById(@Param("id") Integer id);
 }

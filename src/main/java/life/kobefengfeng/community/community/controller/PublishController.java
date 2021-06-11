@@ -1,7 +1,6 @@
 package life.kobefengfeng.community.community.controller;
 
 import life.kobefengfeng.community.community.mapper.QuestionMapper;
-import life.kobefengfeng.community.community.mapper.UserMapper;
 import life.kobefengfeng.community.community.model.Question;
 import life.kobefengfeng.community.community.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,16 +10,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 
 @Controller
 public class PublishController {
     @Autowired
     private QuestionMapper questionMapper;
-
-    @Autowired
-    private UserMapper userMapper;
 
     @GetMapping("/publish")//request get读取页面
     public String publish(){
@@ -29,7 +24,7 @@ public class PublishController {
 
     @PostMapping("/publish")//Post response 页面返回来的信息写入
     public String doPublish(
-            @RequestParam("title") String title,
+            @RequestParam("title") String title,//括号内的title类型是String类型的，获得的页面的输入的信息
             @RequestParam("description") String description,
             @RequestParam("tag") String tag,
             HttpServletRequest request,
@@ -50,22 +45,8 @@ public class PublishController {
             model.addAttribute("error","标签不能为空");
             return "publish";
         }
-
-        User user = null;
-        Cookie[] cookies = request.getCookies();
-        if(cookies != null && cookies.length != 0)
-        {
-            for (Cookie cookie : cookies) {
-                if(cookie.getName().equals("token")){
-                    String token = cookie.getValue();
-                    user = userMapper.findByToken(token);
-                    if(user != null){
-                        request.getSession().setAttribute("user",user);
-                    }
-                    break;
-                }
-            }
-        }
+        //获取写入到session中的user对象，由于是Object类型的，要对其进行强制类型转换
+        User user = (User) request.getSession().getAttribute("user");
         //发布失败
         if(user == null){
             model.addAttribute("error","用户未登录");
@@ -76,7 +57,7 @@ public class PublishController {
         question.setTitle(title);
         question.setDescription(description);
         question.setTag(tag);
-        question.setCreator(user.getId());
+        question.setCreator(user.getId());//将问题创建者与用户的id绑定
         question.setGmtCreate(System.currentTimeMillis());
         question.setGmtMod(question.getGmtCreate());
 
