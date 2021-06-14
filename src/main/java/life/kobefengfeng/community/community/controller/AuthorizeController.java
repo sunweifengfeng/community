@@ -5,6 +5,7 @@ import life.kobefengfeng.community.community.dto.GithubUser;
 import life.kobefengfeng.community.community.mapper.UserMapper;
 import life.kobefengfeng.community.community.model.User;
 import life.kobefengfeng.community.community.provider.GithubProvider;
+import life.kobefengfeng.community.community.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.net.http.HttpResponse;
 import java.util.UUID;
 
 @Controller
@@ -29,7 +31,7 @@ public class AuthorizeController {
     private String redirectUri;
 
     @Autowired
-    private UserMapper userMapper;
+    private UserService userService;
 
     @GetMapping("/callback")           //进入登录地址中，因为前文配置了登录状态进入callback地址
     public String callback(@RequestParam(name="code")String code,
@@ -50,10 +52,8 @@ public class AuthorizeController {
             user.setToken(token);
             user.setName(githubUser.getName());
             user.setAccountId(String.valueOf(githubUser.getId()));
-            user.setGmtCreate(System.currentTimeMillis());
-            user.setGmtMod(user.getGmtCreate());
             user.setAvatarUrl(githubUser.getAvatar_url());
-            userMapper.insert(user);//将用户信息插入到数据库中
+            userService.createOrUpdate(user);
             response.addCookie(new Cookie("token",token));//并将token信息写入cookie中
             return "redirect:/";
         }
@@ -61,5 +61,19 @@ public class AuthorizeController {
             //登录失败重新登录
             return "redirect:/";
         }
+    }
+
+    //退出登录
+    @GetMapping("/logout")
+    public String logout(HttpServletRequest request,
+                         HttpServletResponse response){
+        //移除掉session（因为之前本项目的session的就是user，所以此处移除user）  session是通过request获取
+        request.getSession().removeAttribute("user");
+        //移除cookie  cookie是通过response设置的
+
+        Cookie cookie = new Cookie("token",null);
+        cookie.setMaxAge(0);
+        response.addCookie(cookie);
+        return "redirect:/";
     }
 }

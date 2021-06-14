@@ -54,7 +54,7 @@ public class QuestionService {
 
         //questionDTO的建立就是比question多了一个user  是为了查询user的avatarUrl
         for (Question question : questions) {            //循环question对象
-            User user = userMapper.findById(question.getCreator());//根据创建者问题的creator在user表中查询id号 就是avatar_url的id，返回user对象
+            User user = userMapper.selectByPrimaryKey(question.getCreator());//根据创建者问题的creator在user表中查询id号 就是avatar_url的id，返回user对象
             QuestionDTO questionDTO = new QuestionDTO();
             BeanUtils.copyProperties(question,questionDTO);//把question里的所有对象放到questionDTO中
             questionDTO.setUser(user);
@@ -91,7 +91,7 @@ public class QuestionService {
 
         //questionDTO的建立就是比question多了一个user  是为了查询user的avatarUrl
         for (Question question : questions) {            //循环question对象
-            User user = userMapper.findById(question.getCreator());//根据创建者问题的creator在user表中查询id号 就是avatar_url的id，返回user对象
+            User user = userMapper.selectByPrimaryKey(question.getCreator());//根据创建者问题的creator在user表中查询id号 就是avatar_url的id，返回user对象
             QuestionDTO questionDTO = new QuestionDTO();
             BeanUtils.copyProperties(question,questionDTO);//把question里的所有对象放到questionDTO中
             questionDTO.setUser(user);
@@ -105,9 +105,22 @@ public class QuestionService {
         Question question = questionMapper.getById(id);//
         QuestionDTO questionDTO = new QuestionDTO();
         BeanUtils.copyProperties(question,questionDTO);//把question里的所有对象放到questionDTO中
-        User user = userMapper.findById(question.getCreator());//根据创建者问题的creator在user表中查询id号 就是avatar_url的id，返回user对象
+        User user = userMapper.selectByPrimaryKey(question.getCreator());//根据创建者问题的creator在user表中查询id号 就是avatar_url的id，返回user对象
         questionDTO.setUser(user);
         return questionDTO;
 
+    }
+
+    public void createOrUpdate(Question question) {
+        if(question.getId()==null){
+            //创建
+            question.setGmtCreate(System.currentTimeMillis());
+            question.setGmtMod(question.getGmtCreate());
+            questionMapper.create(question);
+        }else{
+            //更新
+            question.setGmtMod(question.getGmtCreate());
+            questionMapper.update(question);
+        }
     }
 }
