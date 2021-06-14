@@ -5,6 +5,8 @@
 
 <generatorConfiguration>
     <context id="DB2Tables" targetRuntime="MyBatis3">        <!--定义一个数据库表-->
+
+        <plugin type="org.mybatis.generator.plugins.RowBoundsPlugin"></plugin>
         <jdbcConnection driverClass="org.h2.Driver"
                         connectionURL="jdbc:h2:~/community"
                         userId="sa"
