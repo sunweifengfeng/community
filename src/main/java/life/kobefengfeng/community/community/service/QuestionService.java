@@ -4,6 +4,7 @@ import life.kobefengfeng.community.community.dto.PaginationDTO;
 import life.kobefengfeng.community.community.dto.QuestionDTO;
 import life.kobefengfeng.community.community.exception.CustomizeErrorCode;
 import life.kobefengfeng.community.community.exception.CustomizeException;
+import life.kobefengfeng.community.community.mapper.QuestionExtMapper;
 import life.kobefengfeng.community.community.mapper.QuestionMapper;
 import life.kobefengfeng.community.community.mapper.UserMapper;
 import life.kobefengfeng.community.community.model.Question;
@@ -28,6 +29,9 @@ public class QuestionService {
 
     @Autowired
     private QuestionMapper questionMapper;//需要依赖index以来的东西，questionMapper和userMapper
+
+    @Autowired
+    private QuestionExtMapper questionExtMapper;
 
     @Autowired
     private UserMapper userMapper;
@@ -148,5 +152,12 @@ public class QuestionService {
                 throw new CustomizeException(CustomizeErrorCode.QUESTION_NOT_FOUND);
             }
         }
+    }
+
+    public void incView(Integer id) {
+        Question question = new Question();
+        question.setId(id);//为了和xml文件的where id传入id参数
+        question.setViewCount(1);//这是每次递增的步长为1
+        questionExtMapper.incView(question);//这个IncView和上2行的那个不是一个
     }
 }

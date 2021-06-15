@@ -28,6 +28,8 @@ public class QuestionController {
                            Model model){
         //希望从数据库中查询到，并且传到页面总去
         QuestionDTO questionDTO = questionService.getById(id);//传递给questionDTO是因为其内容里比较丰富，相比较与model中的question
+        //累加阅读数
+        questionService.incView(id);
         model.addAttribute("question",questionDTO);
         return "question";
     }
