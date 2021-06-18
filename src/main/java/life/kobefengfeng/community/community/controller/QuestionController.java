@@ -24,7 +24,7 @@ public class QuestionController {
     private QuestionService questionService;
 
     @GetMapping("/question/{id}")//这里写了{参数}，参数可以在下面的方法中@PathVariable拿到该值，传递到下面
-    public String question(@PathVariable(name = "id") Integer id,
+    public String question(@PathVariable(name = "id") Long id,
                            Model model){
         //希望从数据库中查询到，并且传到页面总去
         QuestionDTO questionDTO = questionService.getById(id);//传递给questionDTO是因为其内容里比较丰富，相比较与model中的question

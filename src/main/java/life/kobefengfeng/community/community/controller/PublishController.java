@@ -23,7 +23,7 @@ public class PublishController {
 
     //加一个地址，希望能够接受到id
     @GetMapping("/publish/{id}")//地址变化了 变为了 从浏览器获取接收到的信息 publish+id
-    public String edit(@PathVariable(name = "id") Integer id,
+    public String edit(@PathVariable(name = "id") Long id,
                        Model model){//拿到id，如果id不为空，就去展示
         //通过上方拿到的id去查询question
         QuestionDTO question = questionService.getById(id);
@@ -44,7 +44,7 @@ public class PublishController {
             @RequestParam(value = "title",required = false) String title,//括号内的title类型是String类型的，获得的页面的输入的信息  是页面传递过来的
             @RequestParam(value = "description",required = false) String description,
             @RequestParam(value = "tag",required = false) String tag,
-            @RequestParam(value = "id",required = false) Integer id,///接收id
+            @RequestParam(value = "id",required = false) Long id,///接收id
             HttpServletRequest request,
             Model model
     ){

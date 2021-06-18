@@ -17,7 +17,9 @@
 [mvn 下载jar](https://mvnrepository.com/artifact/com.squareup.okio/okio/3.0.0-alpha.5) 
 [Flyaway](https://flywaydb.org/)  
 [Lambok](https://projectlombok.org/setup/maven)  
-[Mybatis](http://mybatis.org/spring-boot-starter/mybatis-spring-boot-autoconfigure/)  
+[Mybatis](http://mybatis.org/spring-boot-starter/mybatis-spring-boot-autoconfigure/) 
+[JSON 在线调试](https://jsoneditoronline.org/) 
+[ApiPost](https://www.apipost.cn/)  
 ## 脚本
 ```sql
 create table USER
