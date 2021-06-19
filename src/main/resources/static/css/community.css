@@ -2,6 +2,7 @@ body{
     background-color: #efefef;
 }
 .main{
+    background-color: white;
     margin: 30px;
 }
 
@@ -12,6 +13,9 @@ body{
 .media-object{
     width: 40px;
     height: 40px;
+}
+.media-body{
+    padding-top: 10px;
 }
 .text-desc{
     font-size: 12px;
@@ -24,8 +28,33 @@ body{
 
 .community-menu{
     color: #999;
+    margin-bottom: 18px;
+    display: block;
 }
 
 .jumbotron{
     margin: 50px;
+}
+.comment{
+    margin: 10px 0;
+}
+.btn-comment{
+    float: right;
+    margin-bottom: 10px;
+}
+.comments{   /*放在id下的用"#"   放在class中的用"."*/
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    border-bottom:1px solid #eee;
+}
+.menu{
+    color: #999;
+}
+.menu .icon{
+    margin-right: 6px;
+    font-size: 15px;
+    cursor: pointer; /*显示小手*/
+}
+.menu .icon:hover{/*鼠标放上显示颜色*/
+    color: #499ef3;
 }

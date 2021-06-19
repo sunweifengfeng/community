@@ -20,6 +20,9 @@
 [Mybatis](http://mybatis.org/spring-boot-starter/mybatis-spring-boot-autoconfigure/) 
 [JSON 在线调试](https://jsoneditoronline.org/) 
 [ApiPost](https://www.apipost.cn/)  
+[JQuery](https://api.jquery.com/)
+[localStorage JS](https://www.runoob.com/jsref/prop-win-localstorage.html)
+[localStorage HTML](https://www.runoob.com/html/html5-webstorage.html)
 ## 脚本
 ```sql
 create table USER
