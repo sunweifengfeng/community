@@ -4,10 +4,7 @@ import life.kobefengfeng.community.community.dto.CommentDTO;
 import life.kobefengfeng.community.community.enums.CommentTypeEnum;
 import life.kobefengfeng.community.community.exception.CustomizeErrorCode;
 import life.kobefengfeng.community.community.exception.CustomizeException;
-import life.kobefengfeng.community.community.mapper.CommentMapper;
-import life.kobefengfeng.community.community.mapper.QuestionExtMapper;
-import life.kobefengfeng.community.community.mapper.QuestionMapper;
-import life.kobefengfeng.community.community.mapper.UserMapper;
+import life.kobefengfeng.community.community.mapper.*;
 import life.kobefengfeng.community.community.model.*;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +34,9 @@ public class CommentService {
     private QuestionExtMapper questionExtMapper;
 
     @Autowired
+    private CommentExtMapper commentExtMapper;
+
+    @Autowired
     private UserMapper userMapper;
 
     @Transactional
@@ -60,6 +60,9 @@ public class CommentService {
                 throw new CustomizeException(CustomizeErrorCode.COMMENT_NOT_FOUND);
             }else {
                 commentMapper.insert(comment);
+                //增加评论的评论数
+                dbComment.setCommentCount(1);
+                commentExtMapper.incCommentCount(dbComment);
             }
         }else {
             //回复问题
@@ -70,18 +73,20 @@ public class CommentService {
             }
             //否则 问题存在 插入评论
             commentMapper.insert(comment);
+            //增加问题的评论数
             question.setCommentCount(1);
             questionExtMapper.incCommentCount(question);
         }
     }
 
     //根据问题id去评论数据库中查找评论。并附加user信息，返回到CommentDTO
-    public List<CommentDTO> ListByQuestionId(Long id) {
+    public List<CommentDTO> ListByTargetId(Long id, CommentTypeEnum type) {
         //首先去commentMapper中查评论
         CommentExample commentExample = new CommentExample();
         commentExample.createCriteria()
                 .andParentIdEqualTo(id)
-                .andTypeEqualTo(CommentTypeEnum.QUESTION.getType());
+                .andTypeEqualTo(type.getType());
+        commentExample.setOrderByClause("gmt_create desc");//按创建时间的倒序排列
         List<Comment> comments = commentMapper.selectByExample(commentExample);
 
 

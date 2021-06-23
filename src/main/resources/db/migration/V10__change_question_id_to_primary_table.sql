@@ -1,0 +1,1 @@
+alter table QUESTION add PRIMARY KEY(ID);

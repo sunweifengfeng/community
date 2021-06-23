@@ -11,9 +11,10 @@ import lombok.Data;
  * @Version 1.0
  */
 @Data
-public class ResultDTO {
+public class ResultDTO<T> {
     private Integer code;
     private String message;
+    private  T data;
 
     //返回错误信息
     public static ResultDTO errorOf(Integer code,String message){
@@ -35,6 +36,14 @@ public class ResultDTO {
         ResultDTO resultDTO = new ResultDTO();
         resultDTO.setCode(200);
         resultDTO.setMessage("请求成功");
+        return resultDTO;
+    }
+
+    public static <T> ResultDTO okOf(T t){/*okOf参数是泛型的 且返回值也是泛型的*/
+        ResultDTO resultDTO = new ResultDTO();
+        resultDTO.setCode(200);
+        resultDTO.setMessage("请求成功");
+        resultDTO.setData(t);
         return resultDTO;
     }
 }

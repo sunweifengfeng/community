@@ -2,6 +2,7 @@ package life.kobefengfeng.community.community.controller;
 
 import life.kobefengfeng.community.community.dto.QuestionDTO;
 import life.kobefengfeng.community.community.dto.CommentDTO;
+import life.kobefengfeng.community.community.enums.CommentTypeEnum;
 import life.kobefengfeng.community.community.service.CommentService;
 import life.kobefengfeng.community.community.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +34,7 @@ public class QuestionController {
         //希望从数据库中查询到，并且传到页面总去
         QuestionDTO questionDTO = questionService.getById(id);//传递给questionDTO是因为其内容里比较丰富，相比较与model中的question
 
-        List<CommentDTO> comments = commentService.ListByQuestionId(id); //根据问题id查询评论列表
+        List<CommentDTO> comments = commentService.ListByTargetId(id, CommentTypeEnum.QUESTION); //根据问题id查询评论列表
         //累加阅读数
         questionService.incView(id);
         model.addAttribute("question",questionDTO);

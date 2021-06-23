@@ -5,10 +5,15 @@ body{
     background-color: white;
     margin: 30px;
 }
-
+.question-title{
+    margin-top: 25px;
+}
 .btn-publish{
     float: right;
     margin-bottom: 15px;
+}
+.comment-sp{
+    margin-top: 0;
 }
 .media-object{
     width: 40px;
@@ -47,8 +52,25 @@ body{
     margin-bottom: 15px;
     border-bottom:1px solid #eee;
 }
+.sub-comments{
+    border-radius: 5px;/*页面的显示是   边界是圆弧的*/
+    margin-top:10px;/*margin层距离上边缘10px*/
+    border: 1px solid #eee;/*边界框*/
+    padding-top: 15px;/*border内层的padding距离border15px*/
+    margin-bottom: 15px;
+}
+.sub-comments .btn{
+    margin: 10px 0;
+}
 .menu{
     color: #999;
+}
+.menu .comment-icon{
+    font-size: 15px;
+    cursor: pointer;
+}
+.menu .comment-icon:hover{
+    color: #499ef3;
 }
 .menu .icon{
     margin-right: 6px;
