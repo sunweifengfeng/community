@@ -34,11 +34,15 @@ public class QuestionController {
         //希望从数据库中查询到，并且传到页面总去
         QuestionDTO questionDTO = questionService.getById(id);//传递给questionDTO是因为其内容里比较丰富，相比较与model中的question
 
+        List<QuestionDTO> relatedQuestions = questionService.selectRelated(questionDTO);
+
         List<CommentDTO> comments = commentService.ListByTargetId(id, CommentTypeEnum.QUESTION); //根据问题id查询评论列表
         //累加阅读数
         questionService.incView(id);
         model.addAttribute("question",questionDTO);
         model.addAttribute("comments",comments);//将评论渲染到页面显示
+        model.addAttribute("relatedQuestions",relatedQuestions);//相关问题渲染到页面显示
+
         return "question";
     }
 }

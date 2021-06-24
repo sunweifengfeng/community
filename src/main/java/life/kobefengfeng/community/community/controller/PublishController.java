@@ -5,6 +5,7 @@ import life.kobefengfeng.community.community.mapper.QuestionMapper;
 import life.kobefengfeng.community.community.model.Question;
 import life.kobefengfeng.community.community.model.User;
 import life.kobefengfeng.community.community.service.QuestionService;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -74,6 +75,7 @@ public class PublishController {
         Question question = new Question();
         question.setTitle(title);
         question.setDescription(description);
+        StringUtils.replace(tag,"，",",");//将中文逗号替换为英文逗号
         question.setTag(tag);
         question.setCreator(user.getId());//将问题创建者与用户的id绑定
         question.setId(id);

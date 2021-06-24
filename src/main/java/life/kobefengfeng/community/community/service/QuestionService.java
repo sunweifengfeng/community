@@ -10,13 +10,17 @@ import life.kobefengfeng.community.community.mapper.UserMapper;
 import life.kobefengfeng.community.community.model.Question;
 import life.kobefengfeng.community.community.model.QuestionExample;
 import life.kobefengfeng.community.community.model.User;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @Author KobeFL
@@ -57,7 +61,9 @@ public class QuestionService {
         paginationDTO.setPagination(totalPage,page);//创建一个方法，根据2个参数计算页面展示所需要的元素
         //size*(page-1)
         Integer offset = size*(page-1);
-        List<Question> questions = questionMapper.selectByExampleWithBLOBsWithRowbounds(new QuestionExample(),new RowBounds(offset,size));//查到所有question对象
+        QuestionExample questionExample = new QuestionExample();
+        questionExample.setOrderByClause("gmt_Create desc");//按照时间的倒序进行问题排序
+        List<Question> questions = questionMapper.selectByExampleWithBLOBsWithRowbounds(questionExample,new RowBounds(offset,size));//查到所有question对象
         List<QuestionDTO> questionDTOList = new ArrayList<>();
 
         //questionDTO的建立就是比question多了一个user  是为了查询user的avatarUrl
@@ -162,5 +168,31 @@ public class QuestionService {
         question.setId(id);//为了和xml文件的where id传入id参数
         question.setViewCount(1);//这是每次递增的步长为1
         questionExtMapper.incView(question);//这个IncView和上2行的那个不是一个
+    }
+
+    public List<QuestionDTO> selectRelated(QuestionDTO queryDTO) {
+        if(StringUtils.isBlank(queryDTO.getTag())){
+            return new ArrayList<>();
+        }
+
+        //将tag用|连接，用于正则表达式的数据库相关字段查询
+        //StringUtils.replace(queryDTO.getTag(),",","|");//将“，”用“|”替换，用于正则表达式的搜索
+        String[] tags = StringUtils.split(queryDTO.getTag(), ",");//将tag按逗号分割开
+        String regexpTag = Arrays.stream(tags).collect(Collectors.joining("|"));//将tag用|连在一起
+
+        //数据库中相关tag的question查询
+        Question question = new Question();
+        question.setId(queryDTO.getId());
+        question.setTag(regexpTag);
+        List<Question> questions = questionExtMapper.selectRelated(question);
+
+        //将question封装进questionDTO中
+        List<QuestionDTO> questionDTOS = questions.stream().map(q -> {
+            QuestionDTO questionDTO = new QuestionDTO();
+            BeanUtils.copyProperties(q, questionDTO);
+            return questionDTO;
+        }).collect(Collectors.toList());
+
+        return questionDTOS;
     }
 }
