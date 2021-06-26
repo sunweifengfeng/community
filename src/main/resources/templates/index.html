@@ -27,7 +27,7 @@
             <!-- 第一个参数glyphicon是icon标签 第二个参数是具体是什么icon，我们用的是Bootstrap的那个+号-->
             <hr>
 
-            <div class="media" th:each="question : ${pagination.questions}">
+            <div class="media" th:each="question : ${pagination.data}">
                 <div class="media-left">
                     <a href="#">
                         <img class="media-object img-rounded"

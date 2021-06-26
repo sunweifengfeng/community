@@ -2,6 +2,8 @@ package life.kobefengfeng.community.community.service;
 
 import life.kobefengfeng.community.community.dto.CommentDTO;
 import life.kobefengfeng.community.community.enums.CommentTypeEnum;
+import life.kobefengfeng.community.community.enums.NotificationStatusEnum;
+import life.kobefengfeng.community.community.enums.NotificationTypeEnum;
 import life.kobefengfeng.community.community.exception.CustomizeErrorCode;
 import life.kobefengfeng.community.community.exception.CustomizeException;
 import life.kobefengfeng.community.community.mapper.*;
@@ -37,10 +39,13 @@ public class CommentService {
     private CommentExtMapper commentExtMapper;
 
     @Autowired
+    private NotificationMapper notificationMapper;
+
+    @Autowired
     private UserMapper userMapper;
 
     @Transactional
-    public void insert(Comment comment) {
+    public void insert(Comment comment, User commentator) {
         if(comment.getParentId() == null || comment.getParentId() == 0){
             //抛出异常，期待最外层CommentController拦住exception
             //进入处理异常的方法CustomizeExceptionHandler
@@ -59,10 +64,20 @@ public class CommentService {
             if(dbComment == null){
                 throw new CustomizeException(CustomizeErrorCode.COMMENT_NOT_FOUND);
             }else {
+                //验证问题是否存在
+                Question question = questionMapper.selectByPrimaryKey(dbComment.getParentId());
+                //问题不存在 抛出异常
+                if(question == null){
+                    throw new CustomizeException(CustomizeErrorCode.QUESTION_NOT_FOUND);
+                }
+
                 commentMapper.insert(comment);
                 //增加评论的评论数
                 dbComment.setCommentCount(1);
                 commentExtMapper.incCommentCount(dbComment);
+
+                //创建通知  增加回复评论内容 通知信息
+                createNotify(comment, dbComment.getCommentator(), commentator.getName(), question.getTitle(), NotificationTypeEnum.REPLY_COMMENT,question.getId());
             }
         }else {
             //回复问题
@@ -76,7 +91,24 @@ public class CommentService {
             //增加问题的评论数
             question.setCommentCount(1);
             questionExtMapper.incCommentCount(question);
+
+            //创建通知
+            createNotify(comment,question.getCreator(), commentator.getName(),question.getTitle(),NotificationTypeEnum.REPLY_QUESTION, question.getId());
         }
+    }
+
+    //创建通知
+    private void createNotify(Comment comment, Long receiver, String notifierName, String outerTitle, NotificationTypeEnum notificationType, Long outerId) {
+        Notification notification = new Notification();
+        notification.setGmtCreate(System.currentTimeMillis());//通知创建时间
+        notification.setOuterid(outerId);//问题的id
+        notification.setType(notificationType.getType());//通知的类型 是回复问题还是回复评论
+        notification.setNotifier(comment.getCommentator());//通知者 就是评论人
+        notification.setStatus(NotificationStatusEnum.UNREAD.getStatus());//设为未读状态
+        notification.setReceiver(receiver);//接收者 问题的创建者 或者 一级评论者
+        notification.setNotifierName(notifierName);//通知者的名字 评论者的名字
+        notification.setOuterTitle(outerTitle);//问题的title
+        notificationMapper.insert(notification);//插入数据库
     }
 
     //根据问题id去评论数据库中查找评论。并附加user信息，返回到CommentDTO

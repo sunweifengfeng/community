@@ -52,8 +52,8 @@ public class CommentController {
         comment.setGmtMod(System.currentTimeMillis());
         comment.setCommentator(user.getId());//评论人的id
         comment.setLikeCount(0L);//long类型要以L结尾
-        commentService.insert(comment);//存入数据库
-        return ResultDTO.okOf();//返回的值是commun.js中success中的response获取的
+        commentService.insert(comment,user);//存入数据库
+        return ResultDTO.okOf();//返回的值是community.js中success中的response获取的
     }
 
     //获取二级评论

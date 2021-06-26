@@ -1,5 +1,6 @@
 package life.kobefengfeng.community.community.controller;
 
+import life.kobefengfeng.community.community.cache.TagCache;
 import life.kobefengfeng.community.community.dto.QuestionDTO;
 import life.kobefengfeng.community.community.mapper.QuestionMapper;
 import life.kobefengfeng.community.community.model.Question;
@@ -22,7 +23,7 @@ public class PublishController {
     @Autowired
     private  QuestionService questionService;
 
-    //加一个地址，希望能够接受到id
+    //查询某个问题的时候（即编辑提问的时候） 显示提问  加一个地址，希望能够接受到id
     @GetMapping("/publish/{id}")//地址变化了 变为了 从浏览器获取接收到的信息 publish+id
     public String edit(@PathVariable(name = "id") Long id,
                        Model model){//拿到id，如果id不为空，就去展示
@@ -32,14 +33,18 @@ public class PublishController {
         model.addAttribute("description",question.getDescription());
         model.addAttribute("tag",question.getTag());
         model.addAttribute("id",question.getId());//把id传到页面
+        model.addAttribute("tags", TagCache.get());
         return "publish";
     }
 
+    //显示标签 显示提问问题
     @GetMapping("/publish")//request get读取网址信息
-    public String publish(){
+    public String publish(Model model){
+        model.addAttribute("tags", TagCache.get());
         return "publish";
     }
 
+    //提问
     @PostMapping("/publish")//Post response 页面返回来的信息写入
     public String doPublish(
             @RequestParam(value = "title",required = false) String title,//括号内的title类型是String类型的，获得的页面的输入的信息  是页面传递过来的
@@ -52,6 +57,7 @@ public class PublishController {
         model.addAttribute("title",title);//model可以将title的值写入"title"中，并在html文件中获取到，可以写出来
         model.addAttribute("description",description);
         model.addAttribute("tag",tag);
+        model.addAttribute("tags", TagCache.get());
         if(title == null || title == ""){
             model.addAttribute("error","标题不能为空");
             return "publish";
@@ -64,6 +70,14 @@ public class PublishController {
             model.addAttribute("error","标签不能为空");
             return "publish";
         }
+
+        //判断非法标签
+        String invalid = TagCache.filterInvalid(tag);
+        if(StringUtils.isNotBlank(invalid)){
+            model.addAttribute("error","输入非法标签：" + invalid);
+            return "publish";
+        }
+
         //获取写入到session中的user对象，由于是Object类型的，要对其进行强制类型转换
         User user = (User) request.getSession().getAttribute("user");
         //发布失败

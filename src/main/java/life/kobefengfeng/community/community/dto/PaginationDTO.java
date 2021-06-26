@@ -13,8 +13,8 @@ import java.util.List;
  */
 //正常是前端做这件事，但是本课程是弱化这件事情
 @Data
-public class PaginationDTO {
-    private List<QuestionDTO> questions;
+public class PaginationDTO<T> {
+    private List<T> data;
     private boolean showPrevious;//默认false 是否有向前按钮
     private boolean showFirstPage;
     private boolean showNext;

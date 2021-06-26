@@ -120,3 +120,24 @@ function collapseComments(e) {
         }
     }
 }
+
+/*点击input时候显示标签框*/
+function showSelectTag() {
+    $("#select-tag").show();
+}
+
+/*点击标签 写入input中去*/
+function selectTag(e) {
+    var value = e.getAttribute("data-tag");//value就是publishHtml中的selectTag
+    /*点击值放进input中*/
+    var previous = $("#tag").val();/*获取input的id对应的类 就是input类 previous是该类的值*/
+
+    if(previous.indexOf(value) == -1)/*原来没有该值 添加input*/
+    {
+        if(previous){
+            $("#tag").val(previous + ',' + value);/*如果原来有值就添加上去 如果没有就直接写入*/
+        }else {
+            $("#tag").val(value);
+        }
+    }
+}
