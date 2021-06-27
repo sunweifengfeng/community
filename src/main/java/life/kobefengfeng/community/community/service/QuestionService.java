@@ -154,7 +154,7 @@ public class QuestionService {
             updateQuestion.setTag(question.getTag());
             QuestionExample example = new QuestionExample();
             example.createCriteria()
-                    .andCreatorEqualTo(question.getId());
+                    .andIdEqualTo(question.getId());
             int updated = questionMapper.updateByExampleSelective(updateQuestion, example);//第一个参数是更新得对象的信息，第二个参数是根据id寻找到的要更新的对象
             //判断是否更新了
             if(updated != 1){

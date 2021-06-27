@@ -4,12 +4,17 @@
     <title th:text="${question.title}"></title>   <!--我的问题列表页面-->
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link rel="stylesheet" href="/css/bootstrap.min.css"/>   <!--希望来自根目录的样式，不然样式会飘红，即加‘/’-->
-    <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/css/editormd.preview.min.css">
+    <link rel="stylesheet" href="/css/community.css">
     <link rel="stylesheet" href="/css/community.css">
     <script src="/js/jquery-3.4.1.min.js"></script>
     <script src="/js/community.js"></script>
     <script src="/js/moment.js"></script>
     <script src="/js/bootstrap.min.js" type="application/javascript"></script>
+    <script src="jquery.min.js"></script>
+    <script src="/js/editormd.min.js" type="application/javascript"></script>
+    <script src="/js/lib/marked.min.js"></script>
+    <script src="/js/lib/prettify.min.js"></script>
 </head>
 <body>
 <div th:insert="~{navigation :: nav}"></div>  <!--导入新建的include navigation.html导航栏-->
@@ -29,7 +34,15 @@
                 阅读数：<span th:text="${question.viewCount}"></span>
             </span>
                 <hr class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" th:text="${question.description}"></div>
+                <!--内容-->
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="question-view">
+                    <textarea style="display:none;" th:text="${question.description}"></textarea>
+                </div>
+                <script type="text/javascript">
+                    $(function() {
+                        editormd.markdownToHTML("question-view", {});
+                    });
+                </script>
                 <!--显示标签-->
                 <hr class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -149,7 +162,7 @@
             <hr class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">  <!--右半部分显示-->
                 <h4>虚拟内存分配空间</h4>
-                <img class="img-thumbnail question-divideSpace" src="/img/divideSpace.png">
+                <img class="img-thumbnail question-divideSpace" src="/static/images/img/divideSpace.png">
             </div>
 
             <!--相关问题-->

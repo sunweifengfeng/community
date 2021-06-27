@@ -63,6 +63,7 @@ public class NotificationService {
         NotificationExample example = new NotificationExample();
         example.createCriteria()
                 .andReceiverEqualTo(id);
+        example.setOrderByClause("gmt_create desc");
         //分页查询 每一页中显示通知
         List<Notification> notifications = notificationMapper.selectByExampleWithRowbounds(example,new RowBounds(offset,size));
 

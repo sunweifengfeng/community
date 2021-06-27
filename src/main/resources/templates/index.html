@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>码匠社区</title>
+    <title>java新手学习社区</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
@@ -38,7 +38,7 @@
                     <h4 class="media-heading">
                         <a th:href="@{'question/'+${question.id}}" th:text="${question.title}" ></a>  <!--a标签是跳转用的  点击问题跳转到相应的页面-->
                     </h4>
-                    <span th:text="${question.description}"></span> <br>
+<!--                    <span th:text="${question.description}"></span> <br>-->
                     <span class="text-desc"><span th:text="${question.commentCount}"></span>个回复• <span
                             th:text="${question.viewCount}"></span>次浏览 • <sapn th:text="${#dates.format(question.getGmtCreate(),'yyyy-MM-dd HH:mm')}"></sapn></span><!--内容-->
                 </div>
