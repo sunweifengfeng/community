@@ -29,8 +29,12 @@ public class FileController {
         MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
         MultipartFile file = multipartRequest.getFile("editormd-image-file");//分段 分片上传
         try {
-            uCloudProvider.upload(file.getInputStream(),file.getContentType(),file.getOriginalFilename());
-        } catch (IOException e) {
+            String fileName = uCloudProvider.upload(file.getInputStream(), file.getContentType(), file.getOriginalFilename());
+            FileDTO fileDTO = new FileDTO();
+            fileDTO.setSuccess(1);//默认上传成功  message不需要先
+            fileDTO.setUrl(fileName);
+            return fileDTO;
+        } catch (Exception e) {
             e.printStackTrace();
         }
         FileDTO fileDTO = new FileDTO();
