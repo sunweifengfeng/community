@@ -2,6 +2,7 @@ package life.kobefengfeng.community.community.service;
 
 import life.kobefengfeng.community.community.dto.PaginationDTO;
 import life.kobefengfeng.community.community.dto.QuestionDTO;
+import life.kobefengfeng.community.community.dto.QuestionQueryDTO;
 import life.kobefengfeng.community.community.exception.CustomizeErrorCode;
 import life.kobefengfeng.community.community.exception.CustomizeException;
 import life.kobefengfeng.community.community.mapper.QuestionExtMapper;
@@ -40,11 +41,24 @@ public class QuestionService {
     @Autowired
     private UserMapper userMapper;
 //查询数据库
-    public PaginationDTO list(Integer page, Integer size) {
+    public PaginationDTO list(Integer page, Integer size,String search) {
+
+        //如果搜索框内容不为空 则将其按照空格分隔
+        //然后将关键字用正则表达式链接
+        if(StringUtils.isNotBlank(search)){
+            //将search用|连接，用于正则表达式的数据库相关字段查询
+            String[] tags = StringUtils.split(search, " ");//将tag按逗号分割开
+            search = Arrays.stream(tags).collect(Collectors.joining("|"));//将tag用|连在一起
+        }
 
         //查询数据库之前判断页面是否符合要求
         PaginationDTO paginationDTO = new PaginationDTO();
-        Integer totalCount = (int) questionMapper.countByExample(new QuestionExample());
+
+        //根据search内容查询符合条件的问题的数量
+        QuestionQueryDTO questionQueryDTO = new QuestionQueryDTO();
+        questionQueryDTO.setSearch(search);
+        Integer totalCount =  questionExtMapper.countBySearch(questionQueryDTO);
+
         Integer totalPage;
         if(totalCount % size == 0){
             totalPage = totalCount / size;
@@ -63,7 +77,9 @@ public class QuestionService {
         Integer offset = size*(page-1);
         QuestionExample questionExample = new QuestionExample();
         questionExample.setOrderByClause("gmt_Create desc");//按照时间的倒序进行问题排序
-        List<Question> questions = questionMapper.selectByExampleWithBLOBsWithRowbounds(questionExample,new RowBounds(offset,size));//查到所有question对象
+        questionQueryDTO.setPage(offset);
+        questionQueryDTO.setSize(size);
+        List<Question> questions = questionExtMapper.selectBySearch(questionQueryDTO);//查到所有question对象
         List<QuestionDTO> questionDTOList = new ArrayList<>();
 
         //questionDTO的建立就是比question多了一个user  是为了查询user的avatarUrl

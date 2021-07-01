@@ -86,6 +86,7 @@ public class CommentService {
             if(question == null){
                 throw new CustomizeException(CustomizeErrorCode.QUESTION_NOT_FOUND);
             }
+            comment.setCommentCount(0);
             //否则 问题存在 插入评论
             commentMapper.insert(comment);
             //增加问题的评论数
@@ -99,6 +100,9 @@ public class CommentService {
 
     //创建通知
     private void createNotify(Comment comment, Long receiver, String notifierName, String outerTitle, NotificationTypeEnum notificationType, Long outerId) {
+        if(receiver == comment.getCommentator()){
+            return;
+        }
         Notification notification = new Notification();
         notification.setGmtCreate(System.currentTimeMillis());//通知创建时间
         notification.setOuterid(outerId);//问题的id

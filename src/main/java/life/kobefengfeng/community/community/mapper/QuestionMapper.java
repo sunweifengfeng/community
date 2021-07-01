@@ -1,6 +1,8 @@
 package life.kobefengfeng.community.community.mapper;
 
 import java.util.List;
+
+import life.kobefengfeng.community.community.dto.QuestionQueryDTO;
 import life.kobefengfeng.community.community.model.Question;
 import life.kobefengfeng.community.community.model.QuestionExample;
 import org.apache.ibatis.annotations.Param;

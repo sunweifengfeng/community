@@ -16,11 +16,13 @@ public class IndexController {
     @GetMapping("/")
     public String index(Model model,
                         @RequestParam(name = "page",defaultValue = "1") Integer page, //页码数   获取页面参数
-                        @RequestParam(name = "size",defaultValue = "5") Integer size  //每页的话题数
+                        @RequestParam(name = "size",defaultValue = "5") Integer size,  //每页的话题数
+                        @RequestParam(name = "search",required = false) String search  //搜索功能
                         ){
 
-        PaginationDTO pagination = questionService.list(page,size);
+        PaginationDTO pagination = questionService.list(page,size,search);
         model.addAttribute("pagination",pagination);
+        model.addAttribute("search",search);
         return "index";
     };
 }
