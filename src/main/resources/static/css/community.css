@@ -103,3 +103,8 @@ body{
 .menu .icon:hover{/*鼠标放上显示颜色*/
     color: #499ef3;
 }
+
+.footer{
+    padding:10px 45%;
+    color: #666;
+}

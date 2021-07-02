@@ -26,6 +26,7 @@
 [JQuery](https://api.jquery.com/)
 [localStorage JS](https://www.runoob.com/jsref/prop-win-localstorage.html)
 [localStorage HTML](https://www.runoob.com/html/html5-webstorage.html)
+[spring boot log](https://docs.spring.io/spring-boot/docs/current/reference/html/features.html#features.logging)  
 ## 脚本
 ```sql
 create table USER
