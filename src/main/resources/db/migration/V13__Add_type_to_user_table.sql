@@ -1,0 +1,1 @@
+alter table user add type VARCHAR(10) null default 'github';

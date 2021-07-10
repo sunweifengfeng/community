@@ -74,7 +74,7 @@ public class QuestionService {
         }
         paginationDTO.setPagination(totalPage,page);//创建一个方法，根据2个参数计算页面展示所需要的元素
         //size*(page-1)
-        Integer offset = size*(page-1);
+        Integer offset = page < 1 ? 0 : size*(page-1);
         QuestionExample questionExample = new QuestionExample();
         questionExample.setOrderByClause("gmt_Create desc");//按照时间的倒序进行问题排序
         questionQueryDTO.setPage(offset);

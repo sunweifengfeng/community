@@ -22,7 +22,8 @@ public class UserService {
     public void createOrUpdate(User user) {
         UserExample userExample = new UserExample();
         userExample.createCriteria()
-                .andAccountIdEqualTo(user.getAccountId());//拼接accountID
+                .andAccountIdEqualTo(user.getAccountId())//拼接accountID
+                .andTypeEqualTo(user.getType());//根据ID和type获取用户信息
         List<User> users = userMapper.selectByExample(userExample);
         if(users.size() == 0){
             //插入

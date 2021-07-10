@@ -1,9 +1,9 @@
-package life.kobefengfeng.community.community.dto;
+package life.kobefengfeng.community.community.provider.dto;
 
 import lombok.Data;
 
 @Data
-public class GithubUser {
+public class GiteeUser {
     private String name;
     private Long id;
     private String bio;
