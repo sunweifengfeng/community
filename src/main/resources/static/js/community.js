@@ -37,9 +37,10 @@ function comment2target(targetId, type, content) {
                     //登录异常
                     var isAccept = confirm(response.message);//windows对象自带的confirm框，没有登录时会弹出对话框，点击yes返回true
                     if (isAccept) {
+                        $('#myModal').modal({});
                         //点击yes 条状到登录页面
                         //打开新的窗口
-                        window.open("https://github.com/login/oauth/authorize?client_id=553a246519d95c8aaad2&redirect_uri=http://localhost:8887/callback&scope=user&state=1");
+                        //window.open("https://github.com/login/oauth/authorize?client_id=553a246519d95c8aaad2&redirect_uri=http://localhost:8887/callback&scope=user&state=1");
                         window.localStorage.setItem("closeable", "true");
                     }
                 } else {

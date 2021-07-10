@@ -5,6 +5,7 @@ import life.kobefengfeng.community.community.mapper.UserMapper;
 import life.kobefengfeng.community.community.model.User;
 import life.kobefengfeng.community.community.model.UserExample;
 import life.kobefengfeng.community.community.service.NotificationService;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -33,7 +34,7 @@ public class SessionInterceptor implements HandlerInterceptor {
         if(cookies != null && cookies.length != 0)
         {
             for (Cookie cookie : cookies) {
-                if(cookie.getName().equals("token")){
+                if (cookie.getName().equals("token") && StringUtils.isNotBlank(cookie.getValue())) {
                     String token = cookie.getValue();
                     UserExample userExample = new UserExample();
                     userExample.createCriteria()

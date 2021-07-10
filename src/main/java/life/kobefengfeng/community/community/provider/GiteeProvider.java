@@ -1,6 +1,7 @@
 package life.kobefengfeng.community.community.provider;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import life.kobefengfeng.community.community.dto.AccessTokenDTO;
 import life.kobefengfeng.community.community.provider.dto.GiteeUser;
 import lombok.extern.slf4j.Slf4j;
@@ -35,11 +36,13 @@ public class GiteeProvider {
                 .build();
         try (Response response = client.newCall(request).execute()) {
             String string = response.body().string();
-            log.info("gitee response:{}",string);
+            JSONObject jsonObject = JSON.parseObject(string);
+            String accessToken = jsonObject.getString("access_token");
+            return accessToken;
 //            String token = string.split("&")[0].split("=")[1];
 //            return token;
         } catch (Exception e) {
-            e.printStackTrace();
+            log.info("gitee response:{}",accessTokenDTO,e);
         }
         return null;
     }
