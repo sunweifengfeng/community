@@ -78,6 +78,7 @@ public class AuthorizeController {
         //移除掉session（因为之前本项目的session的就是user，所以此处移除user）  session是通过request获取
         //移除cookie  cookie是通过response设置的
 
+        //用于清除session的所有信息
         request.getSession().invalidate();
         Cookie cookie = new Cookie("token",null);
         cookie.setMaxAge(0);

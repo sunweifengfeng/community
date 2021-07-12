@@ -34,6 +34,7 @@ public class SessionInterceptor implements HandlerInterceptor {
         if(cookies != null && cookies.length != 0)
         {
             for (Cookie cookie : cookies) {
+                //防止因为退出登录仍然获取user
                 if (cookie.getName().equals("token") && StringUtils.isNotBlank(cookie.getValue())) {
                     String token = cookie.getValue();
                     UserExample userExample = new UserExample();

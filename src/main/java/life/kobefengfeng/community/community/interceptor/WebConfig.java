@@ -22,6 +22,6 @@ public class WebConfig implements WebMvcConfigurer {
         //addPathPatterns:是在请求的时候，对哪些地址进行拦截；excludePathPatterns是把哪些地址进行略过，是哪些Controller返回的地址需要通过Interceptor处理拦截
         registry.addInterceptor(sessionInterceptor)
                 .addPathPatterns("/**")
-                .excludePathPatterns("/callback/**", "/logout");
+                .excludePathPatterns("/callback/**", "/logout");//在访问除了callback和logout之前的所有路径都进入拦截器
     }
 }
