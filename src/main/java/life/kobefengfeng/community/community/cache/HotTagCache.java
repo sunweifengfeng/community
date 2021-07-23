@@ -15,13 +15,12 @@ import java.util.*;
 @Component
 @Data
 public class HotTagCache {
-    private Map<String,Integer> tags = new HashMap<>();
     //存放topn
     private List<String> hots = new ArrayList<>();
 
     public void updateTags(Map<String,Integer> tags){
         //定义三个的作用是只显示热度前三的问题
-        int max = 3;
+        int max = 6;
         //初始化优先队列的指定长度
         PriorityQueue<HotTagDTO> priorityQueue = new PriorityQueue<>(max);
         //遍历map
@@ -30,7 +29,7 @@ public class HotTagCache {
             hotTagDTO.setName(name);
             hotTagDTO.setPriority(priority);
             //小顶堆中个数小于3 则将map放进去
-            if(priorityQueue.size() < 3){
+            if(priorityQueue.size() < max){
                 priorityQueue.add(hotTagDTO);//add进去的元素 对象要实现compareble接口 要去HotTag中实现此接口
             }else{//小顶堆中个数小于3 则将map放进去
                 //拿到堆顶 最小的元素

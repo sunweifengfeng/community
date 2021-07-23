@@ -41,7 +41,7 @@ public class QuestionService {
     @Autowired
     private UserMapper userMapper;
 //查询数据库
-    public PaginationDTO list(Integer page, Integer size,String search) {
+    public PaginationDTO list(Integer page, Integer size, String search, String tag) {
 
         //如果搜索框内容不为空 则将其按照空格分隔
         //然后将关键字用正则表达式链接
@@ -57,6 +57,7 @@ public class QuestionService {
         //根据search内容查询符合条件的问题的数量
         QuestionQueryDTO questionQueryDTO = new QuestionQueryDTO();
         questionQueryDTO.setSearch(search);
+        questionQueryDTO.setTag(tag);
         Integer totalCount =  questionExtMapper.countBySearch(questionQueryDTO);
 
         Integer totalPage;

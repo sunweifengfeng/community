@@ -1,335 +1,937 @@
-2021-07-22 22:22:57.227  INFO 16876 --- [restartedMain] l.k.c.community.CommunityApplication     : Starting CommunityApplication using Java 11.0.4 on WIN-20BK8L90EFQ with PID 16876 (C:\code\community\target\classes started by Administrator in C:\code\community)
-2021-07-22 22:22:57.242  INFO 16876 --- [restartedMain] l.k.c.community.CommunityApplication     : No active profile set, falling back to default profiles: default
-2021-07-22 22:22:57.612  INFO 16876 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-07-22 22:22:57.613  INFO 16876 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2021-07-22 22:22:57.672  WARN 16876 --- [background-preinit] o.s.h.c.j.Jackson2ObjectMapperBuilder    : For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2021-07-22 22:23:00.086  INFO 16876 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
-2021-07-22 22:23:00.099  INFO 16876 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-07-22 22:23:00.100  INFO 16876 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
-2021-07-22 22:23:00.104  INFO 16876 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.30] using APR version [1.7.0].
-2021-07-22 22:23:00.105  INFO 16876 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-2021-07-22 22:23:00.106  INFO 16876 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2021-07-22 22:23:00.127  INFO 16876 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1k  25 Mar 2021]
-2021-07-22 22:23:00.267  INFO 16876 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-07-22 22:23:00.267  INFO 16876 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2652 ms
-2021-07-22 22:23:00.338  INFO 16876 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-07-22 22:23:00.588  INFO 16876 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-07-22 22:23:00.597  INFO 16876 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:~/community'
-2021-07-22 22:23:01.567  INFO 16876 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2021-07-22 22:23:02.271  INFO 16876 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2021-07-22 22:23:02.325  INFO 16876 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
-2021-07-22 22:23:02.340  INFO 16876 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Thu Jul 22 22:23:02 CST 2021
-2021-07-22 22:23:02.349  INFO 16876 --- [restartedMain] l.k.c.community.CommunityApplication     : Started CommunityApplication in 5.982 seconds (JVM running for 8.113)
-2021-07-22 22:23:02.355  INFO 16876 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
-2021-07-22 22:23:02.361  INFO 16876 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
-2021-07-22 22:23:02.464 ERROR 16876 --- [scheduling-1] o.s.s.s.TaskUtils$LoggingErrorHandler    : Unexpected error occurred in scheduled task
+2021-07-23 20:01:57.467  INFO 8732 --- [restartedMain] l.k.c.community.CommunityApplication     : Starting CommunityApplication using Java 11.0.4 on WIN-20BK8L90EFQ with PID 8732 (C:\code\community\target\classes started by Administrator in C:\code\community)
+2021-07-23 20:01:57.480  INFO 8732 --- [restartedMain] l.k.c.community.CommunityApplication     : No active profile set, falling back to default profiles: default
+2021-07-23 20:01:57.712  WARN 8732 --- [background-preinit] o.s.h.c.j.Jackson2ObjectMapperBuilder    : For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2021-07-23 20:01:57.716  INFO 8732 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-07-23 20:01:57.717  INFO 8732 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-07-23 20:01:59.470  INFO 8732 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
+2021-07-23 20:01:59.486  INFO 8732 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-23 20:01:59.486  INFO 8732 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-07-23 20:01:59.489  INFO 8732 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.30] using APR version [1.7.0].
+2021-07-23 20:01:59.490  INFO 8732 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2021-07-23 20:01:59.491  INFO 8732 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2021-07-23 20:01:59.513  INFO 8732 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1k  25 Mar 2021]
+2021-07-23 20:01:59.654  INFO 8732 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-23 20:01:59.655  INFO 8732 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1936 ms
+2021-07-23 20:01:59.715  INFO 8732 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-07-23 20:01:59.945  INFO 8732 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-07-23 20:01:59.955  INFO 8732 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:~/community'
+2021-07-23 20:02:00.875  INFO 8732 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-07-23 20:02:01.557  INFO 8732 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-07-23 20:02:01.609  INFO 8732 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
+2021-07-23 20:02:01.621  INFO 8732 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:02:01 CST 2021
+2021-07-23 20:02:01.629  INFO 8732 --- [restartedMain] l.k.c.community.CommunityApplication     : Started CommunityApplication in 5.238 seconds (JVM running for 7.526)
+2021-07-23 20:02:01.632  INFO 8732 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-07-23 20:02:01.636  INFO 8732 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-07-23 20:02:01.721  INFO 8732 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:02:01 CST 2021
+2021-07-23 20:02:12.123  INFO 8732 --- [http-nio-8887-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-23 20:02:12.124  INFO 8732 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-23 20:02:12.126  INFO 8732 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-07-23 20:02:12.404  WARN 8732 --- [http-nio-8887-exec-1] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [206] milliseconds.
+2021-07-23 20:02:21.622  INFO 8732 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:02:21 CST 2021
+2021-07-23 20:02:21.629  INFO 8732 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:02:21 CST 2021
+2021-07-23 20:02:41.622  INFO 8732 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:02:41 CST 2021
+2021-07-23 20:02:41.626  INFO 8732 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:02:41 CST 2021
+2021-07-23 20:03:01.622  INFO 8732 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:03:01 CST 2021
+2021-07-23 20:03:01.625  INFO 8732 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:03:01 CST 2021
+2021-07-23 20:03:21.623  INFO 8732 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:03:21 CST 2021
+2021-07-23 20:03:21.629  INFO 8732 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:03:21 CST 2021
+2021-07-23 20:03:41.623  INFO 8732 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:03:41 CST 2021
+2021-07-23 20:03:41.633  INFO 8732 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:03:41 CST 2021
+2021-07-23 20:04:01.623  INFO 8732 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:04:01 CST 2021
+2021-07-23 20:04:01.627  INFO 8732 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:04:01 CST 2021
+2021-07-23 20:04:21.623  INFO 8732 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:04:21 CST 2021
+2021-07-23 20:04:21.625  INFO 8732 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:04:21 CST 2021
+2021-07-23 20:04:56.034  INFO 9392 --- [restartedMain] l.k.c.community.CommunityApplication     : Starting CommunityApplication using Java 11.0.4 on WIN-20BK8L90EFQ with PID 9392 (C:\code\community\target\classes started by Administrator in C:\code\community)
+2021-07-23 20:04:56.107  INFO 9392 --- [restartedMain] l.k.c.community.CommunityApplication     : No active profile set, falling back to default profiles: default
+2021-07-23 20:04:56.231  INFO 9392 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-07-23 20:04:56.232  INFO 9392 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-07-23 20:04:56.390  WARN 9392 --- [background-preinit] o.s.h.c.j.Jackson2ObjectMapperBuilder    : For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2021-07-23 20:04:58.094  INFO 9392 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
+2021-07-23 20:04:58.105  INFO 9392 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-23 20:04:58.106  INFO 9392 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-07-23 20:04:58.109  INFO 9392 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.30] using APR version [1.7.0].
+2021-07-23 20:04:58.109  INFO 9392 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2021-07-23 20:04:58.109  INFO 9392 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2021-07-23 20:04:58.113  INFO 9392 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1k  25 Mar 2021]
+2021-07-23 20:04:58.229  INFO 9392 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-23 20:04:58.229  INFO 9392 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1996 ms
+2021-07-23 20:04:58.266  INFO 9392 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-07-23 20:04:58.470  INFO 9392 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-07-23 20:04:58.480  INFO 9392 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:~/community'
+2021-07-23 20:04:59.260  INFO 9392 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-07-23 20:04:59.861  INFO 9392 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-07-23 20:04:59.909  INFO 9392 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
+2021-07-23 20:04:59.924  INFO 9392 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:04:59 CST 2021
+2021-07-23 20:04:59.932  INFO 9392 --- [restartedMain] l.k.c.community.CommunityApplication     : Started CommunityApplication in 5.075 seconds (JVM running for 7.63)
+2021-07-23 20:04:59.934  INFO 9392 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-07-23 20:04:59.938  INFO 9392 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-07-23 20:04:59.994  INFO 9392 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:04:59 CST 2021
+2021-07-23 20:05:12.034  INFO 9392 --- [http-nio-8887-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-23 20:05:12.035  INFO 9392 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-23 20:05:12.036  INFO 9392 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-07-23 20:05:12.250  WARN 9392 --- [http-nio-8887-exec-1] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [174] milliseconds.
+2021-07-23 20:05:19.923  INFO 9392 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:05:19 CST 2021
+2021-07-23 20:05:19.927  INFO 9392 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:05:19 CST 2021
+2021-07-23 20:05:39.955  INFO 9392 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:05:39 CST 2021
+2021-07-23 20:05:39.973  INFO 9392 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:05:39 CST 2021
+2021-07-23 20:05:58.071  INFO 1564 --- [restartedMain] l.k.c.community.CommunityApplication     : Starting CommunityApplication using Java 11.0.4 on WIN-20BK8L90EFQ with PID 1564 (C:\code\community\target\classes started by Administrator in C:\code\community)
+2021-07-23 20:05:58.075  INFO 1564 --- [restartedMain] l.k.c.community.CommunityApplication     : No active profile set, falling back to default profiles: default
+2021-07-23 20:05:58.207  INFO 1564 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-07-23 20:05:58.208  INFO 1564 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-07-23 20:05:58.264  WARN 1564 --- [background-preinit] o.s.h.c.j.Jackson2ObjectMapperBuilder    : For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2021-07-23 20:06:00.551  INFO 1564 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
+2021-07-23 20:06:00.566  INFO 1564 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-23 20:06:00.567  INFO 1564 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-07-23 20:06:00.570  INFO 1564 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.30] using APR version [1.7.0].
+2021-07-23 20:06:00.570  INFO 1564 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2021-07-23 20:06:00.571  INFO 1564 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2021-07-23 20:06:00.574  INFO 1564 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1k  25 Mar 2021]
+2021-07-23 20:06:00.692  INFO 1564 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-23 20:06:00.693  INFO 1564 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2484 ms
+2021-07-23 20:06:00.728  INFO 1564 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-07-23 20:06:00.897  INFO 1564 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-07-23 20:06:00.904  INFO 1564 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:~/community'
+2021-07-23 20:06:01.763  INFO 1564 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-07-23 20:06:02.386  INFO 1564 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-07-23 20:06:02.433  INFO 1564 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
+2021-07-23 20:06:02.445  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:06:02 CST 2021
+2021-07-23 20:06:02.455  INFO 1564 --- [restartedMain] l.k.c.community.CommunityApplication     : Started CommunityApplication in 5.094 seconds (JVM running for 6.68)
+2021-07-23 20:06:02.457  INFO 1564 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-07-23 20:06:02.460  INFO 1564 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-07-23 20:06:02.520  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:06:02 CST 2021
+2021-07-23 20:06:05.409  INFO 1564 --- [http-nio-8887-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-23 20:06:05.410  INFO 1564 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-23 20:06:05.411  INFO 1564 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-07-23 20:06:05.625  WARN 1564 --- [http-nio-8887-exec-1] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [168] milliseconds.
+2021-07-23 20:06:22.446  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:06:22 CST 2021
+2021-07-23 20:06:22.449  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:06:22 CST 2021
+2021-07-23 20:06:42.448  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:06:42 CST 2021
+2021-07-23 20:06:42.453  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:06:42 CST 2021
+2021-07-23 20:07:02.446  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:07:02 CST 2021
+2021-07-23 20:07:02.449  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:07:02 CST 2021
+2021-07-23 20:07:22.446  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:07:22 CST 2021
+2021-07-23 20:07:22.450  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:07:22 CST 2021
+2021-07-23 20:07:42.446  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:07:42 CST 2021
+2021-07-23 20:07:42.452  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:07:42 CST 2021
+2021-07-23 20:08:02.447  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:08:02 CST 2021
+2021-07-23 20:08:02.457  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:08:02 CST 2021
+2021-07-23 20:08:22.447  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:08:22 CST 2021
+2021-07-23 20:08:22.453  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:08:22 CST 2021
+2021-07-23 20:08:42.446  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:08:42 CST 2021
+2021-07-23 20:08:42.455  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:08:42 CST 2021
+2021-07-23 20:09:02.447  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:09:02 CST 2021
+2021-07-23 20:09:02.453  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:09:02 CST 2021
+2021-07-23 20:09:22.451  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:09:22 CST 2021
+2021-07-23 20:09:22.460  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:09:22 CST 2021
+2021-07-23 20:09:42.447  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:09:42 CST 2021
+2021-07-23 20:09:42.451  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:09:42 CST 2021
+2021-07-23 20:10:02.448  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:10:02 CST 2021
+2021-07-23 20:10:02.452  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:10:02 CST 2021
+2021-07-23 20:10:22.448  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:10:22 CST 2021
+2021-07-23 20:10:22.468  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:10:22 CST 2021
+2021-07-23 20:10:42.462  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:10:42 CST 2021
+2021-07-23 20:10:42.468  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:10:42 CST 2021
+2021-07-23 20:11:02.449  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:11:02 CST 2021
+2021-07-23 20:11:02.455  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:11:02 CST 2021
+2021-07-23 20:11:22.448  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:11:22 CST 2021
+2021-07-23 20:11:22.459  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:11:22 CST 2021
+2021-07-23 20:11:42.448  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:11:42 CST 2021
+2021-07-23 20:11:42.455  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:11:42 CST 2021
+2021-07-23 20:12:02.448  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:12:02 CST 2021
+2021-07-23 20:12:02.454  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:12:02 CST 2021
+2021-07-23 20:12:22.449  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:12:22 CST 2021
+2021-07-23 20:12:22.457  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:12:22 CST 2021
+2021-07-23 20:12:42.449  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:12:42 CST 2021
+2021-07-23 20:12:42.455  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:12:42 CST 2021
+2021-07-23 20:13:02.450  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:13:02 CST 2021
+2021-07-23 20:13:02.454  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:13:02 CST 2021
+2021-07-23 20:13:22.450  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:13:22 CST 2021
+2021-07-23 20:13:22.452  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:13:22 CST 2021
+2021-07-23 20:13:42.450  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:13:42 CST 2021
+2021-07-23 20:13:42.453  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:13:42 CST 2021
+2021-07-23 20:14:02.450  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:14:02 CST 2021
+2021-07-23 20:14:02.455  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:14:02 CST 2021
+2021-07-23 20:14:22.450  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:14:22 CST 2021
+2021-07-23 20:14:22.455  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:14:22 CST 2021
+2021-07-23 20:14:42.451  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:14:42 CST 2021
+2021-07-23 20:14:42.456  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:14:42 CST 2021
+2021-07-23 20:15:02.451  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:15:02 CST 2021
+2021-07-23 20:15:02.456  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:15:02 CST 2021
+2021-07-23 20:15:22.451  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:15:22 CST 2021
+2021-07-23 20:15:22.456  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:15:22 CST 2021
+2021-07-23 20:15:42.451  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:15:42 CST 2021
+2021-07-23 20:15:42.455  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:15:42 CST 2021
+2021-07-23 20:16:02.451  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:16:02 CST 2021
+2021-07-23 20:16:02.459  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:16:02 CST 2021
+2021-07-23 20:16:22.458  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:16:22 CST 2021
+2021-07-23 20:16:22.462  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:16:22 CST 2021
+2021-07-23 20:16:40.857  INFO 1564 --- [Thread-7] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
+2021-07-23 20:16:41.263  INFO 1564 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-07-23 20:16:41.624  INFO 1564 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-07-23 20:16:41.823  INFO 1564 --- [restartedMain] l.k.c.community.CommunityApplication     : Starting CommunityApplication using Java 11.0.4 on WIN-20BK8L90EFQ with PID 1564 (C:\code\community\target\classes started by Administrator in C:\code\community)
+2021-07-23 20:16:41.823  INFO 1564 --- [restartedMain] l.k.c.community.CommunityApplication     : No active profile set, falling back to default profiles: default
+2021-07-23 20:16:42.877  INFO 1564 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
+2021-07-23 20:16:42.884  INFO 1564 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-23 20:16:42.886  INFO 1564 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-07-23 20:16:42.886  INFO 1564 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.30] using APR version [1.7.0].
+2021-07-23 20:16:42.887  INFO 1564 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2021-07-23 20:16:42.888  INFO 1564 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2021-07-23 20:16:42.890  INFO 1564 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1k  25 Mar 2021]
+2021-07-23 20:16:42.979  INFO 1564 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-23 20:16:42.979  INFO 1564 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1150 ms
+2021-07-23 20:16:43.022  INFO 1564 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2021-07-23 20:16:43.051  INFO 1564 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2021-07-23 20:16:43.051  INFO 1564 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:~/community'
+2021-07-23 20:16:43.514  INFO 1564 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-07-23 20:16:43.646  INFO 1564 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-07-23 20:16:43.733  INFO 1564 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
+2021-07-23 20:16:43.750  INFO 1564 --- [restartedMain] l.k.c.community.CommunityApplication     : Started CommunityApplication in 2.008 seconds (JVM running for 647.969)
+2021-07-23 20:16:43.753  INFO 1564 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-07-23 20:16:43.757  INFO 1564 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-07-23 20:16:43.758  INFO 1564 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-07-23 20:16:43.780  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:16:43 CST 2021
+2021-07-23 20:16:43.822  INFO 1564 --- [http-nio-8887-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-23 20:16:43.823  INFO 1564 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-23 20:16:43.825  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:16:43 CST 2021
+2021-07-23 20:16:43.825  INFO 1564 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-07-23 20:16:43.969 ERROR 1564 --- [http-nio-8887-exec-1] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-8887-exec-1] Exception processing template "index": An error happened during template parsing (template: "class path resource [templates/index.html]")
 
-java.lang.NullPointerException: null
-	at life.kobefengfeng.community.community.cache.HotTagCache.updateTags(HotTagCache.java:54) ~[classes/:na]
-	at life.kobefengfeng.community.community.schedule.HotTagTasks.hotTagSchedule(HotTagTasks.java:66) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.3.7.jar:5.3.7]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) ~[spring-context-5.3.7.jar:5.3.7]
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[na:na]
-	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) ~[na:na]
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) ~[na:na]
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/index.html]")
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:241) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:366) ~[thymeleaf-spring5-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:190) ~[thymeleaf-spring5-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1396) ~[spring-webmvc-5.3.7.jar:5.3.7]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1141) ~[spring-webmvc-5.3.7.jar:5.3.7]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1080) ~[spring-webmvc-5.3.7.jar:5.3.7]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) ~[spring-webmvc-5.3.7.jar:5.3.7]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.7.jar:5.3.7]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.7.jar:5.3.7]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626) ~[tomcat-embed-core-9.0.46.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.7.jar:5.3.7]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.46.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.7.jar:5.3.7]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.7.jar:5.3.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.7.jar:5.3.7]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.7.jar:5.3.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.7.jar:5.3.7]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.7.jar:5.3.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
 	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+Caused by: org.attoparser.ParseException: Exception evaluating SpringEL expression: "pagination.data" (template: "index" - line 30, col 32)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:393) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	... 48 common frames omitted
+Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: "pagination.data" (template: "index" - line 30, col 32)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:292) ~[thymeleaf-spring5-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:125) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.standard.processor.StandardEachTagProcessor.doProcess(StandardEachTagProcessor.java:73) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	... 50 common frames omitted
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1007E: Property or field 'data' cannot be found on null
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:213) ~[spring-expression-5.3.7.jar:5.3.7]
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:104) ~[spring-expression-5.3.7.jar:5.3.7]
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.access$000(PropertyOrFieldReference.java:51) ~[spring-expression-5.3.7.jar:5.3.7]
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorLValue.getValue(PropertyOrFieldReference.java:406) ~[spring-expression-5.3.7.jar:5.3.7]
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:92) ~[spring-expression-5.3.7.jar:5.3.7]
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:112) ~[spring-expression-5.3.7.jar:5.3.7]
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:337) ~[spring-expression-5.3.7.jar:5.3.7]
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:265) ~[thymeleaf-spring5-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	... 70 common frames omitted
 
-2021-07-22 22:23:22.340  INFO 16876 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Thu Jul 22 22:23:22 CST 2021
-2021-07-22 22:23:22.353 ERROR 16876 --- [scheduling-1] o.s.s.s.TaskUtils$LoggingErrorHandler    : Unexpected error occurred in scheduled task
+2021-07-23 20:16:43.983 ERROR 1564 --- [http-nio-8887-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/index.html]")] with root cause
 
-java.lang.NullPointerException: null
-	at life.kobefengfeng.community.community.cache.HotTagCache.updateTags(HotTagCache.java:54) ~[classes/:na]
-	at life.kobefengfeng.community.community.schedule.HotTagTasks.hotTagSchedule(HotTagTasks.java:66) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.3.7.jar:5.3.7]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) ~[spring-context-5.3.7.jar:5.3.7]
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[na:na]
-	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) ~[na:na]
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) ~[na:na]
+org.springframework.expression.spel.SpelEvaluationException: EL1007E: Property or field 'data' cannot be found on null
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:213) ~[spring-expression-5.3.7.jar:5.3.7]
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:104) ~[spring-expression-5.3.7.jar:5.3.7]
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.access$000(PropertyOrFieldReference.java:51) ~[spring-expression-5.3.7.jar:5.3.7]
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorLValue.getValue(PropertyOrFieldReference.java:406) ~[spring-expression-5.3.7.jar:5.3.7]
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:92) ~[spring-expression-5.3.7.jar:5.3.7]
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:112) ~[spring-expression-5.3.7.jar:5.3.7]
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:337) ~[spring-expression-5.3.7.jar:5.3.7]
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:265) ~[thymeleaf-spring5-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:125) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.standard.processor.StandardEachTagProcessor.doProcess(StandardEachTagProcessor.java:73) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257) ~[attoparser-2.0.5.RELEASE.jar:2.0.5.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072) ~[thymeleaf-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:366) ~[thymeleaf-spring5-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:190) ~[thymeleaf-spring5-3.0.12.RELEASE.jar:3.0.12.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1396) ~[spring-webmvc-5.3.7.jar:5.3.7]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1141) ~[spring-webmvc-5.3.7.jar:5.3.7]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1080) ~[spring-webmvc-5.3.7.jar:5.3.7]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) ~[spring-webmvc-5.3.7.jar:5.3.7]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.7.jar:5.3.7]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.7.jar:5.3.7]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626) ~[tomcat-embed-core-9.0.46.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.7.jar:5.3.7]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.46.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.7.jar:5.3.7]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.7.jar:5.3.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.7.jar:5.3.7]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.7.jar:5.3.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.7.jar:5.3.7]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.7.jar:5.3.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.46.jar:9.0.46]
 	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
 
-2021-07-22 22:23:42.344  INFO 16876 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Thu Jul 22 22:23:42 CST 2021
-2021-07-22 22:23:42.354 ERROR 16876 --- [scheduling-1] o.s.s.s.TaskUtils$LoggingErrorHandler    : Unexpected error occurred in scheduled task
-
-java.lang.NullPointerException: null
-	at life.kobefengfeng.community.community.cache.HotTagCache.updateTags(HotTagCache.java:54) ~[classes/:na]
-	at life.kobefengfeng.community.community.schedule.HotTagTasks.hotTagSchedule(HotTagTasks.java:66) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.3.7.jar:5.3.7]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) ~[spring-context-5.3.7.jar:5.3.7]
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[na:na]
-	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) ~[na:na]
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
-
-2021-07-22 22:23:48.472  INFO 16876 --- [Thread-7] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
-2021-07-22 22:23:49.627  INFO 16876 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-07-22 22:23:49.870  INFO 16876 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2021-07-22 22:23:50.056  INFO 16876 --- [restartedMain] l.k.c.community.CommunityApplication     : Starting CommunityApplication using Java 11.0.4 on WIN-20BK8L90EFQ with PID 16876 (C:\code\community\target\classes started by Administrator in C:\code\community)
-2021-07-22 22:23:50.056  INFO 16876 --- [restartedMain] l.k.c.community.CommunityApplication     : No active profile set, falling back to default profiles: default
-2021-07-22 22:23:50.749  INFO 16876 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
-2021-07-22 22:23:50.751  INFO 16876 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-07-22 22:23:50.752  INFO 16876 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
-2021-07-22 22:23:50.753  INFO 16876 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.30] using APR version [1.7.0].
-2021-07-22 22:23:50.753  INFO 16876 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-2021-07-22 22:23:50.754  INFO 16876 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2021-07-22 22:23:50.754  INFO 16876 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1k  25 Mar 2021]
-2021-07-22 22:23:50.843  INFO 16876 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-07-22 22:23:50.844  INFO 16876 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 782 ms
-2021-07-22 22:23:50.877  INFO 16876 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
-2021-07-22 22:23:50.900  INFO 16876 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
-2021-07-22 22:23:50.900  INFO 16876 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:~/community'
-2021-07-22 22:23:51.312  INFO 16876 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2021-07-22 22:23:51.442  INFO 16876 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2021-07-22 22:23:51.469  INFO 16876 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
-2021-07-22 22:23:51.479  INFO 16876 --- [restartedMain] l.k.c.community.CommunityApplication     : Started CommunityApplication in 1.512 seconds (JVM running for 57.241)
-2021-07-22 22:23:51.481  INFO 16876 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
-2021-07-22 22:23:51.479  INFO 16876 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Thu Jul 22 22:23:51 CST 2021
-2021-07-22 22:23:51.485  INFO 16876 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2021-07-22 22:23:51.485  INFO 16876 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
-2021-07-22 22:23:51.500 ERROR 16876 --- [scheduling-1] o.s.s.s.TaskUtils$LoggingErrorHandler    : Unexpected error occurred in scheduled task
-
-java.lang.NullPointerException: null
-	at life.kobefengfeng.community.community.cache.HotTagCache.updateTags(HotTagCache.java:54) ~[classes/:na]
-	at life.kobefengfeng.community.community.schedule.HotTagTasks.hotTagSchedule(HotTagTasks.java:66) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.3.7.jar:5.3.7]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) ~[spring-context-5.3.7.jar:5.3.7]
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[na:na]
-	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) ~[na:na]
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
-
-2021-07-22 22:23:53.970  INFO 16876 --- [Thread-10] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
-2021-07-22 22:23:54.125  INFO 16876 --- [Thread-10] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
-2021-07-22 22:23:54.330  INFO 16876 --- [Thread-10] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
-2021-07-22 22:23:54.472  INFO 16876 --- [restartedMain] l.k.c.community.CommunityApplication     : Starting CommunityApplication using Java 11.0.4 on WIN-20BK8L90EFQ with PID 16876 (C:\code\community\target\classes started by Administrator in C:\code\community)
-2021-07-22 22:23:54.472  INFO 16876 --- [restartedMain] l.k.c.community.CommunityApplication     : No active profile set, falling back to default profiles: default
-2021-07-22 22:23:55.138  INFO 16876 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
-2021-07-22 22:23:55.140  INFO 16876 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-07-22 22:23:55.140  INFO 16876 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
-2021-07-22 22:23:55.141  INFO 16876 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.30] using APR version [1.7.0].
-2021-07-22 22:23:55.142  INFO 16876 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-2021-07-22 22:23:55.142  INFO 16876 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2021-07-22 22:23:55.143  INFO 16876 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1k  25 Mar 2021]
-2021-07-22 22:23:55.222  INFO 16876 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-07-22 22:23:55.222  INFO 16876 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 744 ms
-2021-07-22 22:23:55.253  INFO 16876 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
-2021-07-22 22:23:55.292  INFO 16876 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
-2021-07-22 22:23:55.293  INFO 16876 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:~/community'
-2021-07-22 22:23:55.712  INFO 16876 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2021-07-22 22:23:55.812  INFO 16876 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2021-07-22 22:23:55.832  INFO 16876 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
-2021-07-22 22:23:55.837  INFO 16876 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Thu Jul 22 22:23:55 CST 2021
-2021-07-22 22:23:55.838  INFO 16876 --- [restartedMain] l.k.c.community.CommunityApplication     : Started CommunityApplication in 1.438 seconds (JVM running for 61.6)
-2021-07-22 22:23:55.839  INFO 16876 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
-2021-07-22 22:23:55.842  INFO 16876 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2021-07-22 22:23:55.842  INFO 16876 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
-2021-07-22 22:23:55.850 ERROR 16876 --- [scheduling-1] o.s.s.s.TaskUtils$LoggingErrorHandler    : Unexpected error occurred in scheduled task
-
-java.lang.NullPointerException: null
-	at life.kobefengfeng.community.community.cache.HotTagCache.updateTags(HotTagCache.java:54) ~[classes/:na]
-	at life.kobefengfeng.community.community.schedule.HotTagTasks.hotTagSchedule(HotTagTasks.java:66) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.3.7.jar:5.3.7]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) ~[spring-context-5.3.7.jar:5.3.7]
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[na:na]
-	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) ~[na:na]
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
-
-2021-07-22 22:24:15.838  INFO 16876 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Thu Jul 22 22:24:15 CST 2021
-2021-07-22 22:24:15.850 ERROR 16876 --- [scheduling-1] o.s.s.s.TaskUtils$LoggingErrorHandler    : Unexpected error occurred in scheduled task
-
-java.lang.NullPointerException: null
-	at life.kobefengfeng.community.community.cache.HotTagCache.updateTags(HotTagCache.java:54) ~[classes/:na]
-	at life.kobefengfeng.community.community.schedule.HotTagTasks.hotTagSchedule(HotTagTasks.java:66) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.3.7.jar:5.3.7]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) ~[spring-context-5.3.7.jar:5.3.7]
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[na:na]
-	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) ~[na:na]
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
-
-2021-07-22 22:24:35.847  INFO 16876 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Thu Jul 22 22:24:35 CST 2021
-2021-07-22 22:24:35.854 ERROR 16876 --- [scheduling-1] o.s.s.s.TaskUtils$LoggingErrorHandler    : Unexpected error occurred in scheduled task
-
-java.lang.NullPointerException: null
-	at life.kobefengfeng.community.community.cache.HotTagCache.updateTags(HotTagCache.java:54) ~[classes/:na]
-	at life.kobefengfeng.community.community.schedule.HotTagTasks.hotTagSchedule(HotTagTasks.java:66) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84) ~[spring-context-5.3.7.jar:5.3.7]
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) ~[spring-context-5.3.7.jar:5.3.7]
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[na:na]
-	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305) ~[na:na]
-	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
-	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
-
-2021-07-22 22:24:39.753  INFO 16876 --- [Thread-15] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
-2021-07-22 22:24:39.938  INFO 16876 --- [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
-2021-07-22 22:24:40.150  INFO 16876 --- [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
-2021-07-22 22:24:40.317  INFO 16876 --- [restartedMain] l.k.c.community.CommunityApplication     : Starting CommunityApplication using Java 11.0.4 on WIN-20BK8L90EFQ with PID 16876 (C:\code\community\target\classes started by Administrator in C:\code\community)
-2021-07-22 22:24:40.317  INFO 16876 --- [restartedMain] l.k.c.community.CommunityApplication     : No active profile set, falling back to default profiles: default
-2021-07-22 22:24:41.000  INFO 16876 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
-2021-07-22 22:24:41.001  INFO 16876 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-07-22 22:24:41.002  INFO 16876 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
-2021-07-22 22:24:41.002  INFO 16876 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.30] using APR version [1.7.0].
-2021-07-22 22:24:41.002  INFO 16876 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-2021-07-22 22:24:41.003  INFO 16876 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2021-07-22 22:24:41.003  INFO 16876 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1k  25 Mar 2021]
-2021-07-22 22:24:41.053  INFO 16876 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-07-22 22:24:41.054  INFO 16876 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 731 ms
-2021-07-22 22:24:41.076  INFO 16876 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
-2021-07-22 22:24:41.096  INFO 16876 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
-2021-07-22 22:24:41.096  INFO 16876 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:~/community'
-2021-07-22 22:24:41.310  WARN 16876 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'hotTagTasks' defined in file [C:\code\community\target\classes\life\kobefengfeng\community\community\schedule\HotTagTasks.class]: Post-processing of merged bean definition failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [life.kobefengfeng.community.community.schedule.HotTagTasks] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@2069c309]
-2021-07-22 22:24:41.311  INFO 16876 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
-2021-07-22 22:24:41.521  INFO 16876 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
-2021-07-22 22:24:41.522  INFO 16876 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2021-07-22 22:24:41.529  INFO 16876 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+2021-07-23 20:17:02.718  INFO 1564 --- [Thread-11] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
+2021-07-23 20:17:02.921  INFO 1564 --- [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2021-07-23 20:17:03.135  INFO 1564 --- [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2021-07-23 20:17:03.294  INFO 1564 --- [restartedMain] l.k.c.community.CommunityApplication     : Starting CommunityApplication using Java 11.0.4 on WIN-20BK8L90EFQ with PID 1564 (C:\code\community\target\classes started by Administrator in C:\code\community)
+2021-07-23 20:17:03.295  INFO 1564 --- [restartedMain] l.k.c.community.CommunityApplication     : No active profile set, falling back to default profiles: default
+2021-07-23 20:17:03.973  INFO 1564 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
+2021-07-23 20:17:03.975  INFO 1564 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-23 20:17:03.975  INFO 1564 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-07-23 20:17:03.976  INFO 1564 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.30] using APR version [1.7.0].
+2021-07-23 20:17:03.976  INFO 1564 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2021-07-23 20:17:03.976  INFO 1564 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2021-07-23 20:17:03.977  INFO 1564 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1k  25 Mar 2021]
+2021-07-23 20:17:04.043  INFO 1564 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-23 20:17:04.044  INFO 1564 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 744 ms
+2021-07-23 20:17:04.068  INFO 1564 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2021-07-23 20:17:04.087  INFO 1564 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2021-07-23 20:17:04.088  INFO 1564 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:~/community'
+2021-07-23 20:17:04.342  INFO 1564 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-07-23 20:17:04.417  INFO 1564 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-07-23 20:17:04.432  INFO 1564 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
+2021-07-23 20:17:04.446  INFO 1564 --- [restartedMain] l.k.c.community.CommunityApplication     : Started CommunityApplication in 1.23 seconds (JVM running for 668.665)
+2021-07-23 20:17:04.445  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:17:04 CST 2021
+2021-07-23 20:17:04.448  INFO 1564 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-07-23 20:17:04.449  INFO 1564 --- [http-nio-8887-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-23 20:17:04.449  INFO 1564 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-23 20:17:04.450  INFO 1564 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-07-23 20:17:04.451  INFO 1564 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-07-23 20:17:04.452  INFO 1564 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-07-23 20:17:04.459  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:17:04 CST 2021
+2021-07-23 20:17:24.441  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:17:24 CST 2021
+2021-07-23 20:17:24.446  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:17:24 CST 2021
+2021-07-23 20:17:44.442  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:17:44 CST 2021
+2021-07-23 20:17:44.448  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:17:44 CST 2021
+2021-07-23 20:18:04.442  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:18:04 CST 2021
+2021-07-23 20:18:04.444  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:18:04 CST 2021
+2021-07-23 20:18:24.442  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:18:24 CST 2021
+2021-07-23 20:18:24.446  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:18:24 CST 2021
+2021-07-23 20:18:44.442  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:18:44 CST 2021
+2021-07-23 20:18:44.445  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:18:44 CST 2021
+2021-07-23 20:19:03.564  INFO 1564 --- [Thread-16] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
+2021-07-23 20:19:04.593  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:19:04 CST 2021
+2021-07-23 20:19:04.798  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:19:04 CST 2021
+2021-07-23 20:19:07.769  INFO 1564 --- [Thread-16] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2021-07-23 20:19:07.995  INFO 1564 --- [Thread-16] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2021-07-23 20:19:08.306  INFO 1564 --- [restartedMain] l.k.c.community.CommunityApplication     : Starting CommunityApplication using Java 11.0.4 on WIN-20BK8L90EFQ with PID 1564 (C:\code\community\target\classes started by Administrator in C:\code\community)
+2021-07-23 20:19:08.307  INFO 1564 --- [restartedMain] l.k.c.community.CommunityApplication     : No active profile set, falling back to default profiles: default
+2021-07-23 20:19:09.137  INFO 1564 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
+2021-07-23 20:19:09.138  INFO 1564 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-23 20:19:09.139  INFO 1564 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-07-23 20:19:09.139  INFO 1564 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.30] using APR version [1.7.0].
+2021-07-23 20:19:09.140  INFO 1564 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2021-07-23 20:19:09.140  INFO 1564 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2021-07-23 20:19:09.140  INFO 1564 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1k  25 Mar 2021]
+2021-07-23 20:19:09.205  INFO 1564 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-23 20:19:09.205  INFO 1564 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 891 ms
+2021-07-23 20:19:09.246  INFO 1564 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2021-07-23 20:19:09.274  INFO 1564 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2021-07-23 20:19:09.274  INFO 1564 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:~/community'
+2021-07-23 20:19:09.664  INFO 1564 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-07-23 20:19:09.781  INFO 1564 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-07-23 20:19:09.805  INFO 1564 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
+2021-07-23 20:19:09.827  INFO 1564 --- [restartedMain] l.k.c.community.CommunityApplication     : Started CommunityApplication in 1.723 seconds (JVM running for 794.044)
+2021-07-23 20:19:09.827  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:19:09 CST 2021
+2021-07-23 20:19:09.828  INFO 1564 --- [http-nio-8887-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-23 20:19:09.831  INFO 1564 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-23 20:19:09.829  INFO 1564 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-07-23 20:19:09.834  INFO 1564 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-07-23 20:19:09.834  INFO 1564 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2021-07-23 20:19:09.835  INFO 1564 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-07-23 20:19:09.858  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:19:09 CST 2021
+2021-07-23 20:19:12.252  INFO 1564 --- [Thread-21] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
+2021-07-23 20:19:12.505  INFO 1564 --- [Thread-21] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2021-07-23 20:19:12.716  INFO 1564 --- [Thread-21] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2021-07-23 20:19:12.915  INFO 1564 --- [restartedMain] l.k.c.community.CommunityApplication     : Starting CommunityApplication using Java 11.0.4 on WIN-20BK8L90EFQ with PID 1564 (C:\code\community\target\classes started by Administrator in C:\code\community)
+2021-07-23 20:19:12.916  INFO 1564 --- [restartedMain] l.k.c.community.CommunityApplication     : No active profile set, falling back to default profiles: default
+2021-07-23 20:19:13.627  INFO 1564 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
+2021-07-23 20:19:13.628  INFO 1564 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-23 20:19:13.629  INFO 1564 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-07-23 20:19:13.629  INFO 1564 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.30] using APR version [1.7.0].
+2021-07-23 20:19:13.629  INFO 1564 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2021-07-23 20:19:13.629  INFO 1564 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2021-07-23 20:19:13.630  INFO 1564 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1k  25 Mar 2021]
+2021-07-23 20:19:13.691  INFO 1564 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-23 20:19:13.691  INFO 1564 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 769 ms
+2021-07-23 20:19:13.717  INFO 1564 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2021-07-23 20:19:13.738  INFO 1564 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2021-07-23 20:19:13.738  INFO 1564 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:~/community'
+2021-07-23 20:19:14.085  INFO 1564 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-07-23 20:19:14.240  INFO 1564 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-07-23 20:19:14.265  INFO 1564 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
+2021-07-23 20:19:14.317  INFO 1564 --- [restartedMain] l.k.c.community.CommunityApplication     : Started CommunityApplication in 1.489 seconds (JVM running for 798.535)
+2021-07-23 20:19:14.318  INFO 1564 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-07-23 20:19:14.320  INFO 1564 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-07-23 20:19:14.322  INFO 1564 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-07-23 20:19:14.347  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:19:14 CST 2021
+2021-07-23 20:19:14.355  INFO 1564 --- [http-nio-8887-exec-4] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-23 20:19:14.358  INFO 1564 --- [http-nio-8887-exec-4] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-23 20:19:14.360  INFO 1564 --- [http-nio-8887-exec-4] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-07-23 20:19:14.409  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:19:14 CST 2021
+2021-07-23 20:19:16.975  INFO 1564 --- [Thread-26] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
+2021-07-23 20:19:17.556  INFO 1564 --- [Thread-26] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
+2021-07-23 20:19:17.792  INFO 1564 --- [Thread-26] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
+2021-07-23 20:19:17.950  INFO 1564 --- [restartedMain] l.k.c.community.CommunityApplication     : Starting CommunityApplication using Java 11.0.4 on WIN-20BK8L90EFQ with PID 1564 (C:\code\community\target\classes started by Administrator in C:\code\community)
+2021-07-23 20:19:17.951  INFO 1564 --- [restartedMain] l.k.c.community.CommunityApplication     : No active profile set, falling back to default profiles: default
+2021-07-23 20:19:18.481  INFO 1564 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
+2021-07-23 20:19:18.482  INFO 1564 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-23 20:19:18.483  INFO 1564 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-07-23 20:19:18.483  INFO 1564 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.30] using APR version [1.7.0].
+2021-07-23 20:19:18.483  INFO 1564 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2021-07-23 20:19:18.483  INFO 1564 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2021-07-23 20:19:18.484  INFO 1564 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1k  25 Mar 2021]
+2021-07-23 20:19:18.540  INFO 1564 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-23 20:19:18.540  INFO 1564 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 585 ms
+2021-07-23 20:19:18.561  INFO 1564 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Starting...
+2021-07-23 20:19:18.577  INFO 1564 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Start completed.
+2021-07-23 20:19:18.577  INFO 1564 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:~/community'
+2021-07-23 20:19:18.959  INFO 1564 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-07-23 20:19:19.096  INFO 1564 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-07-23 20:19:19.126  INFO 1564 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
+2021-07-23 20:19:19.137  INFO 1564 --- [restartedMain] l.k.c.community.CommunityApplication     : Started CommunityApplication in 1.252 seconds (JVM running for 803.355)
+2021-07-23 20:19:19.138  INFO 1564 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-07-23 20:19:19.141  INFO 1564 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-07-23 20:19:19.143  INFO 1564 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-07-23 20:19:19.146  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:19:19 CST 2021
+2021-07-23 20:19:19.154  INFO 1564 --- [http-nio-8887-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-23 20:19:19.154  INFO 1564 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-23 20:19:19.156  INFO 1564 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-07-23 20:19:19.172  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:19:19 CST 2021
+2021-07-23 20:19:21.438  INFO 1564 --- [Thread-31] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
+2021-07-23 20:19:21.616  INFO 1564 --- [Thread-31] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
+2021-07-23 20:19:21.824  INFO 1564 --- [Thread-31] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.
+2021-07-23 20:19:21.943  INFO 1564 --- [restartedMain] l.k.c.community.CommunityApplication     : Starting CommunityApplication using Java 11.0.4 on WIN-20BK8L90EFQ with PID 1564 (C:\code\community\target\classes started by Administrator in C:\code\community)
+2021-07-23 20:19:21.943  INFO 1564 --- [restartedMain] l.k.c.community.CommunityApplication     : No active profile set, falling back to default profiles: default
+2021-07-23 20:19:22.318  INFO 1564 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
+2021-07-23 20:19:22.324  INFO 1564 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-23 20:19:22.324  INFO 1564 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-07-23 20:19:22.325  INFO 1564 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.30] using APR version [1.7.0].
+2021-07-23 20:19:22.325  INFO 1564 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2021-07-23 20:19:22.325  INFO 1564 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2021-07-23 20:19:22.325  INFO 1564 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1k  25 Mar 2021]
+2021-07-23 20:19:22.361  INFO 1564 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-23 20:19:22.361  INFO 1564 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 415 ms
+2021-07-23 20:19:22.376  INFO 1564 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Starting...
+2021-07-23 20:19:22.386  INFO 1564 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Start completed.
+2021-07-23 20:19:22.386  INFO 1564 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:~/community'
+2021-07-23 20:19:22.584  INFO 1564 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-07-23 20:19:22.651  INFO 1564 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-07-23 20:19:22.665  INFO 1564 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
+2021-07-23 20:19:22.677  INFO 1564 --- [http-nio-8887-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-23 20:19:22.678  INFO 1564 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-23 20:19:22.679  INFO 1564 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-07-23 20:19:22.679  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:19:22 CST 2021
+2021-07-23 20:19:22.680  INFO 1564 --- [restartedMain] l.k.c.community.CommunityApplication     : Started CommunityApplication in 0.778 seconds (JVM running for 806.897)
+2021-07-23 20:19:22.680  INFO 1564 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-07-23 20:19:22.682  INFO 1564 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-07-23 20:19:22.682  INFO 1564 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-07-23 20:19:22.688  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:19:22 CST 2021
+2021-07-23 20:19:42.679  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:19:42 CST 2021
+2021-07-23 20:19:42.684  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:19:42 CST 2021
+2021-07-23 20:20:02.680  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:20:02 CST 2021
+2021-07-23 20:20:02.682  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:20:02 CST 2021
+2021-07-23 20:20:22.680  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:20:22 CST 2021
+2021-07-23 20:20:22.681  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:20:22 CST 2021
+2021-07-23 20:20:42.679  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:20:42 CST 2021
+2021-07-23 20:20:42.684  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:20:42 CST 2021
+2021-07-23 20:20:44.370  INFO 1564 --- [Thread-36] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
+2021-07-23 20:20:44.671  INFO 1564 --- [Thread-36] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown initiated...
+2021-07-23 20:20:44.880  INFO 1564 --- [Thread-36] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown completed.
+2021-07-23 20:20:45.024  INFO 1564 --- [restartedMain] l.k.c.community.CommunityApplication     : Starting CommunityApplication using Java 11.0.4 on WIN-20BK8L90EFQ with PID 1564 (C:\code\community\target\classes started by Administrator in C:\code\community)
+2021-07-23 20:20:45.025  INFO 1564 --- [restartedMain] l.k.c.community.CommunityApplication     : No active profile set, falling back to default profiles: default
+2021-07-23 20:20:45.588  INFO 1564 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
+2021-07-23 20:20:45.589  INFO 1564 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-23 20:20:45.589  INFO 1564 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-07-23 20:20:45.590  INFO 1564 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.30] using APR version [1.7.0].
+2021-07-23 20:20:45.590  INFO 1564 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2021-07-23 20:20:45.590  INFO 1564 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2021-07-23 20:20:45.591  INFO 1564 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1k  25 Mar 2021]
+2021-07-23 20:20:45.639  INFO 1564 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-23 20:20:45.639  INFO 1564 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 610 ms
+2021-07-23 20:20:45.664  INFO 1564 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Starting...
+2021-07-23 20:20:45.688  INFO 1564 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Start completed.
+2021-07-23 20:20:45.688  INFO 1564 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:~/community'
+2021-07-23 20:20:46.028  INFO 1564 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-07-23 20:20:46.111  INFO 1564 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-07-23 20:20:46.126  INFO 1564 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
+2021-07-23 20:20:46.140  INFO 1564 --- [http-nio-8887-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-23 20:20:46.141  INFO 1564 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-23 20:20:46.143  INFO 1564 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-07-23 20:20:46.143  INFO 1564 --- [restartedMain] l.k.c.community.CommunityApplication     : Started CommunityApplication in 1.18 seconds (JVM running for 890.36)
+2021-07-23 20:20:46.143  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:20:46 CST 2021
+2021-07-23 20:20:46.144  INFO 1564 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-07-23 20:20:46.147  INFO 1564 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-07-23 20:20:46.148  INFO 1564 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-07-23 20:20:46.153  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:20:46 CST 2021
+2021-07-23 20:20:48.415  INFO 1564 --- [Thread-41] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
+2021-07-23 20:20:48.575  INFO 1564 --- [Thread-41] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown initiated...
+2021-07-23 20:20:48.782  INFO 1564 --- [Thread-41] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown completed.
+2021-07-23 20:20:48.907  INFO 1564 --- [restartedMain] l.k.c.community.CommunityApplication     : Starting CommunityApplication using Java 11.0.4 on WIN-20BK8L90EFQ with PID 1564 (C:\code\community\target\classes started by Administrator in C:\code\community)
+2021-07-23 20:20:48.907  INFO 1564 --- [restartedMain] l.k.c.community.CommunityApplication     : No active profile set, falling back to default profiles: default
+2021-07-23 20:20:49.274  INFO 1564 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
+2021-07-23 20:20:49.275  INFO 1564 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-23 20:20:49.275  INFO 1564 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-07-23 20:20:49.276  INFO 1564 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.30] using APR version [1.7.0].
+2021-07-23 20:20:49.276  INFO 1564 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2021-07-23 20:20:49.276  INFO 1564 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2021-07-23 20:20:49.276  INFO 1564 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1k  25 Mar 2021]
+2021-07-23 20:20:49.319  INFO 1564 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-23 20:20:49.319  INFO 1564 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 409 ms
+2021-07-23 20:20:49.333  INFO 1564 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Starting...
+2021-07-23 20:20:49.342  INFO 1564 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Start completed.
+2021-07-23 20:20:49.342  INFO 1564 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:~/community'
+2021-07-23 20:20:49.532  INFO 1564 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-07-23 20:20:49.640  INFO 1564 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-07-23 20:20:49.657  INFO 1564 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
+2021-07-23 20:20:49.669  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:20:49 CST 2021
+2021-07-23 20:20:49.671  INFO 1564 --- [restartedMain] l.k.c.community.CommunityApplication     : Started CommunityApplication in 0.81 seconds (JVM running for 893.887)
+2021-07-23 20:20:49.671  INFO 1564 --- [http-nio-8887-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-23 20:20:49.671  INFO 1564 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-23 20:20:49.672  INFO 1564 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-07-23 20:20:49.673  INFO 1564 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-07-23 20:20:49.674  INFO 1564 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-07-23 20:20:49.674  INFO 1564 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-07-23 20:20:49.681  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:20:49 CST 2021
+2021-07-23 20:21:09.668  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:21:09 CST 2021
+2021-07-23 20:21:09.671  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:21:09 CST 2021
+2021-07-23 20:21:16.417  INFO 1564 --- [Thread-46] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
+2021-07-23 20:21:16.675  INFO 1564 --- [Thread-46] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Shutdown initiated...
+2021-07-23 20:21:16.901  INFO 1564 --- [Thread-46] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Shutdown completed.
+2021-07-23 20:21:17.200  INFO 1564 --- [restartedMain] l.k.c.community.CommunityApplication     : Starting CommunityApplication using Java 11.0.4 on WIN-20BK8L90EFQ with PID 1564 (C:\code\community\target\classes started by Administrator in C:\code\community)
+2021-07-23 20:21:17.201  INFO 1564 --- [restartedMain] l.k.c.community.CommunityApplication     : No active profile set, falling back to default profiles: default
+2021-07-23 20:21:17.970  INFO 1564 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
+2021-07-23 20:21:17.972  INFO 1564 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-23 20:21:17.972  INFO 1564 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-07-23 20:21:17.972  INFO 1564 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.30] using APR version [1.7.0].
+2021-07-23 20:21:17.972  INFO 1564 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2021-07-23 20:21:17.973  INFO 1564 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2021-07-23 20:21:17.973  INFO 1564 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1k  25 Mar 2021]
+2021-07-23 20:21:18.033  INFO 1564 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-23 20:21:18.034  INFO 1564 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 827 ms
+2021-07-23 20:21:18.070  INFO 1564 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Starting...
+2021-07-23 20:21:18.126  INFO 1564 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Start completed.
+2021-07-23 20:21:18.126  INFO 1564 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:~/community'
+2021-07-23 20:21:18.420  WARN 1564 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'indexController': Unsatisfied dependency expressed through field 'questionService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'life.kobefengfeng.community.community.service.QuestionService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2021-07-23 20:21:18.420  INFO 1564 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Shutdown initiated...
+2021-07-23 20:21:18.638  INFO 1564 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Shutdown completed.
+2021-07-23 20:21:18.638  INFO 1564 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-07-23 20:21:18.652  INFO 1564 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2021-07-22 22:24:41.561 ERROR 16876 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+2021-07-23 20:21:18.688 ERROR 1564 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
 
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'hotTagTasks' defined in file [C:\code\community\target\classes\life\kobefengfeng\community\community\schedule\HotTagTasks.class]: Post-processing of merged bean definition failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [life.kobefengfeng.community.community.schedule.HotTagTasks] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@2069c309]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:579) ~[spring-beans-5.3.7.jar:5.3.7]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:524) ~[spring-beans-5.3.7.jar:5.3.7]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.7.jar:5.3.7]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.7.jar:5.3.7]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.7.jar:5.3.7]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.7.jar:5.3.7]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944) ~[spring-beans-5.3.7.jar:5.3.7]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918) ~[spring-context-5.3.7.jar:5.3.7]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.7.jar:5.3.7]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.5.0.jar:2.5.0]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758) ~[spring-boot-2.5.0.jar:2.5.0]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:438) ~[spring-boot-2.5.0.jar:2.5.0]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:337) ~[spring-boot-2.5.0.jar:2.5.0]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1336) ~[spring-boot-2.5.0.jar:2.5.0]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1325) ~[spring-boot-2.5.0.jar:2.5.0]
-	at life.kobefengfeng.community.community.CommunityApplication.main(CommunityApplication.java:14) ~[classes/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.5.0.jar:2.5.0]
-Caused by: java.lang.IllegalStateException: Failed to introspect Class [life.kobefengfeng.community.community.schedule.HotTagTasks] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@2069c309]
-	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:739) ~[spring-core-5.3.7.jar:5.3.7]
-	at org.springframework.util.ReflectionUtils.doWithLocalFields(ReflectionUtils.java:671) ~[spring-core-5.3.7.jar:5.3.7]
-	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.buildResourceMetadata(CommonAnnotationBeanPostProcessor.java:366) ~[spring-context-5.3.7.jar:5.3.7]
-	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.findResourceMetadata(CommonAnnotationBeanPostProcessor.java:347) ~[spring-context-5.3.7.jar:5.3.7]
-	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessMergedBeanDefinition(CommonAnnotationBeanPostProcessor.java:295) ~[spring-context-5.3.7.jar:5.3.7]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyMergedBeanDefinitionPostProcessors(AbstractAutowireCapableBeanFactory.java:1098) ~[spring-beans-5.3.7.jar:5.3.7]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:576) ~[spring-beans-5.3.7.jar:5.3.7]
-	... 20 common frames omitted
-Caused by: java.lang.NoClassDefFoundError: Llife/kobefengfeng/community/community/cache/HotTagCache;
-	at java.base/java.lang.Class.getDeclaredFields0(Native Method) ~[na:na]
-	at java.base/java.lang.Class.privateGetDeclaredFields(Class.java:3061) ~[na:na]
-	at java.base/java.lang.Class.getDeclaredFields(Class.java:2248) ~[na:na]
-	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:734) ~[spring-core-5.3.7.jar:5.3.7]
-	... 26 common frames omitted
-Caused by: java.lang.ClassNotFoundException: life.kobefengfeng.community.community.cache.HotTagCache
-	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:583) ~[na:na]
-	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178) ~[na:na]
-	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521) ~[na:na]
-	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
-	at java.base/java.lang.Class.forName(Class.java:398) ~[na:na]
-	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:145) ~[spring-boot-devtools-2.5.0.jar:2.5.0]
-	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521) ~[na:na]
-	... 30 common frames omitted
+***************************
+APPLICATION FAILED TO START
+***************************
 
-2021-07-22 22:25:48.632  INFO 16876 --- [restartedMain] l.k.c.community.CommunityApplication     : Starting CommunityApplication using Java 11.0.4 on WIN-20BK8L90EFQ with PID 16876 (C:\code\community\target\classes started by Administrator in C:\code\community)
-2021-07-22 22:25:48.633  INFO 16876 --- [restartedMain] l.k.c.community.CommunityApplication     : No active profile set, falling back to default profiles: default
-2021-07-22 22:25:49.041  INFO 16876 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
-2021-07-22 22:25:49.043  INFO 16876 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-07-22 22:25:49.043  INFO 16876 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
-2021-07-22 22:25:49.043  INFO 16876 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.30] using APR version [1.7.0].
-2021-07-22 22:25:49.044  INFO 16876 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-2021-07-22 22:25:49.044  INFO 16876 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2021-07-22 22:25:49.044  INFO 16876 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1k  25 Mar 2021]
-2021-07-22 22:25:49.079  INFO 16876 --- [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
-2021-07-22 22:25:49.080  INFO 16876 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 443 ms
-2021-07-22 22:25:49.094  INFO 16876 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
-2021-07-22 22:25:49.106  INFO 16876 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
-2021-07-22 22:25:49.106  INFO 16876 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:~/community'
-2021-07-22 22:25:49.380  INFO 16876 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2021-07-22 22:25:49.464  INFO 16876 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2021-07-22 22:25:49.481  INFO 16876 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
-2021-07-22 22:25:49.487  INFO 16876 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Thu Jul 22 22:25:49 CST 2021
-2021-07-22 22:25:49.488  INFO 16876 --- [restartedMain] l.k.c.community.CommunityApplication     : Started CommunityApplication in 0.931 seconds (JVM running for 175.247)
-2021-07-22 22:25:49.489  INFO 16876 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
-2021-07-22 22:25:49.491  INFO 16876 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2021-07-22 22:25:49.492  INFO 16876 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
-2021-07-22 22:25:49.500  INFO 16876 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Thu Jul 22 22:25:49 CST 2021
-2021-07-22 22:26:04.807  INFO 20472 --- [restartedMain] l.k.c.community.CommunityApplication     : Starting CommunityApplication using Java 11.0.4 on WIN-20BK8L90EFQ with PID 20472 (C:\code\community\target\classes started by Administrator in C:\code\community)
-2021-07-22 22:26:04.811  INFO 20472 --- [restartedMain] l.k.c.community.CommunityApplication     : No active profile set, falling back to default profiles: default
-2021-07-22 22:26:04.919  INFO 20472 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-07-22 22:26:04.920  INFO 20472 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2021-07-22 22:26:05.008  WARN 20472 --- [background-preinit] o.s.h.c.j.Jackson2ObjectMapperBuilder    : For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
-2021-07-22 22:26:07.178  INFO 20472 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
-2021-07-22 22:26:07.195  INFO 20472 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-07-22 22:26:07.196  INFO 20472 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
-2021-07-22 22:26:07.200  INFO 20472 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.30] using APR version [1.7.0].
-2021-07-22 22:26:07.201  INFO 20472 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-2021-07-22 22:26:07.201  INFO 20472 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2021-07-22 22:26:07.207  INFO 20472 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1k  25 Mar 2021]
-2021-07-22 22:26:07.415  INFO 20472 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-07-22 22:26:07.416  INFO 20472 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2494 ms
-2021-07-22 22:26:07.486  INFO 20472 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-07-22 22:26:07.800  INFO 20472 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-07-22 22:26:07.812  INFO 20472 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:~/community'
-2021-07-22 22:26:08.869  INFO 20472 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2021-07-22 22:26:09.671  INFO 20472 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2021-07-22 22:26:09.718  INFO 20472 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
-2021-07-22 22:26:09.730  INFO 20472 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Thu Jul 22 22:26:09 CST 2021
-2021-07-22 22:26:09.738  INFO 20472 --- [restartedMain] l.k.c.community.CommunityApplication     : Started CommunityApplication in 5.735 seconds (JVM running for 8.21)
-2021-07-22 22:26:09.742  INFO 20472 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
-2021-07-22 22:26:09.745  INFO 20472 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
-2021-07-22 22:26:09.805  INFO 20472 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Thu Jul 22 22:26:09 CST 2021
-2021-07-22 22:26:29.730  INFO 20472 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Thu Jul 22 22:26:29 CST 2021
-2021-07-22 22:26:29.759  INFO 20472 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Thu Jul 22 22:26:29 CST 2021
-2021-07-22 22:26:49.731  INFO 20472 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Thu Jul 22 22:26:49 CST 2021
-2021-07-22 22:26:49.747  INFO 20472 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Thu Jul 22 22:26:49 CST 2021
-2021-07-22 22:27:09.731  INFO 20472 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Thu Jul 22 22:27:09 CST 2021
-2021-07-22 22:27:09.741  INFO 20472 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Thu Jul 22 22:27:09 CST 2021
-2021-07-22 22:27:29.732  INFO 20472 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Thu Jul 22 22:27:29 CST 2021
-2021-07-22 22:27:29.740  INFO 20472 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Thu Jul 22 22:27:29 CST 2021
-2021-07-22 22:27:49.733  INFO 20472 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Thu Jul 22 22:27:49 CST 2021
-2021-07-22 22:27:49.738  INFO 20472 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Thu Jul 22 22:27:49 CST 2021
+Description:
+
+Field questionService in life.kobefengfeng.community.community.controller.IndexController required a bean of type 'life.kobefengfeng.community.community.service.QuestionService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'life.kobefengfeng.community.community.service.QuestionService' in your configuration.
+
+2021-07-23 20:21:21.137  INFO 1564 --- [restartedMain] l.k.c.community.CommunityApplication     : Starting CommunityApplication using Java 11.0.4 on WIN-20BK8L90EFQ with PID 1564 (C:\code\community\target\classes started by Administrator in C:\code\community)
+2021-07-23 20:21:21.137  INFO 1564 --- [restartedMain] l.k.c.community.CommunityApplication     : No active profile set, falling back to default profiles: default
+2021-07-23 20:21:21.589  INFO 1564 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
+2021-07-23 20:21:21.590  INFO 1564 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-23 20:21:21.590  INFO 1564 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-07-23 20:21:21.591  INFO 1564 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.30] using APR version [1.7.0].
+2021-07-23 20:21:21.592  INFO 1564 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2021-07-23 20:21:21.592  INFO 1564 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2021-07-23 20:21:21.593  INFO 1564 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1k  25 Mar 2021]
+2021-07-23 20:21:21.646  INFO 1564 --- [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2021-07-23 20:21:21.646  INFO 1564 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 506 ms
+2021-07-23 20:21:21.668  INFO 1564 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Starting...
+2021-07-23 20:21:21.681  INFO 1564 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Start completed.
+2021-07-23 20:21:21.681  INFO 1564 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:~/community'
+2021-07-23 20:21:21.952  INFO 1564 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-07-23 20:21:22.027  INFO 1564 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-07-23 20:21:22.045  INFO 1564 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
+2021-07-23 20:21:22.057  INFO 1564 --- [restartedMain] l.k.c.community.CommunityApplication     : Started CommunityApplication in 0.964 seconds (JVM running for 926.274)
+2021-07-23 20:21:22.059  INFO 1564 --- [http-nio-8887-exec-1] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-23 20:21:22.058  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:21:22 CST 2021
+2021-07-23 20:21:22.060  INFO 1564 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-07-23 20:21:22.060  INFO 1564 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-23 20:21:22.062  INFO 1564 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-07-23 20:21:22.062  INFO 1564 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-07-23 20:21:22.063  INFO 1564 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-07-23 20:21:22.070  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:21:22 CST 2021
+2021-07-23 20:21:42.058  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:21:42 CST 2021
+2021-07-23 20:21:42.060  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:21:42 CST 2021
+2021-07-23 20:22:02.058  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:22:02 CST 2021
+2021-07-23 20:22:02.060  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:22:02 CST 2021
+2021-07-23 20:22:22.058  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:22:22 CST 2021
+2021-07-23 20:22:22.059  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:22:22 CST 2021
+2021-07-23 20:22:42.058  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:22:42 CST 2021
+2021-07-23 20:22:42.060  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:22:42 CST 2021
+2021-07-23 20:23:02.058  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:23:02 CST 2021
+2021-07-23 20:23:02.063  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:23:02 CST 2021
+2021-07-23 20:23:22.062  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:23:22 CST 2021
+2021-07-23 20:23:22.064  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:23:22 CST 2021
+2021-07-23 20:23:42.058  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:23:42 CST 2021
+2021-07-23 20:23:42.059  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:23:42 CST 2021
+2021-07-23 20:23:47.407  INFO 1564 --- [Thread-51] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
+2021-07-23 20:23:47.595  INFO 1564 --- [Thread-51] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Shutdown initiated...
+2021-07-23 20:23:47.807  INFO 1564 --- [Thread-51] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Shutdown completed.
+2021-07-23 20:23:47.979  INFO 1564 --- [restartedMain] l.k.c.community.CommunityApplication     : Starting CommunityApplication using Java 11.0.4 on WIN-20BK8L90EFQ with PID 1564 (C:\code\community\target\classes started by Administrator in C:\code\community)
+2021-07-23 20:23:47.980  INFO 1564 --- [restartedMain] l.k.c.community.CommunityApplication     : No active profile set, falling back to default profiles: default
+2021-07-23 20:23:48.684  INFO 1564 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
+2021-07-23 20:23:48.686  INFO 1564 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-23 20:23:48.686  INFO 1564 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-07-23 20:23:48.686  INFO 1564 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.30] using APR version [1.7.0].
+2021-07-23 20:23:48.687  INFO 1564 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2021-07-23 20:23:48.687  INFO 1564 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2021-07-23 20:23:48.687  INFO 1564 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1k  25 Mar 2021]
+2021-07-23 20:23:48.818  INFO 1564 --- [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2021-07-23 20:23:48.819  INFO 1564 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 835 ms
+2021-07-23 20:23:48.853  INFO 1564 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Starting...
+2021-07-23 20:23:48.916  INFO 1564 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Start completed.
+2021-07-23 20:23:48.916  INFO 1564 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:~/community'
+2021-07-23 20:23:49.251  INFO 1564 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-07-23 20:23:49.352  INFO 1564 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-07-23 20:23:49.371  INFO 1564 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
+2021-07-23 20:23:49.383  INFO 1564 --- [restartedMain] l.k.c.community.CommunityApplication     : Started CommunityApplication in 1.483 seconds (JVM running for 1073.598)
+2021-07-23 20:23:49.383  INFO 1564 --- [http-nio-8887-exec-1] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-23 20:23:49.385  INFO 1564 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-23 20:23:49.385  INFO 1564 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-07-23 20:23:49.387  INFO 1564 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-07-23 20:23:49.385  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:23:49 CST 2021
+2021-07-23 20:23:49.388  INFO 1564 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-07-23 20:23:49.389  INFO 1564 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-07-23 20:23:49.398  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:23:49 CST 2021
+2021-07-23 20:23:49.416  WARN 1564 --- [http-nio-8887-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'earch' in 'class life.kobefengfeng.community.community.dto.QuestionQueryDTO']
+2021-07-23 20:24:09.381  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:24:09 CST 2021
+2021-07-23 20:24:09.384  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:24:09 CST 2021
+2021-07-23 20:24:19.340  INFO 1564 --- [Thread-59] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
+2021-07-23 20:24:19.524  INFO 1564 --- [Thread-59] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Shutdown initiated...
+2021-07-23 20:24:19.735  INFO 1564 --- [Thread-59] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Shutdown completed.
+2021-07-23 20:24:19.902  INFO 1564 --- [restartedMain] l.k.c.community.CommunityApplication     : Starting CommunityApplication using Java 11.0.4 on WIN-20BK8L90EFQ with PID 1564 (C:\code\community\target\classes started by Administrator in C:\code\community)
+2021-07-23 20:24:19.903  INFO 1564 --- [restartedMain] l.k.c.community.CommunityApplication     : No active profile set, falling back to default profiles: default
+2021-07-23 20:24:20.770  INFO 1564 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
+2021-07-23 20:24:20.771  INFO 1564 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-23 20:24:20.772  INFO 1564 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-07-23 20:24:20.773  INFO 1564 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.30] using APR version [1.7.0].
+2021-07-23 20:24:20.773  INFO 1564 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2021-07-23 20:24:20.773  INFO 1564 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2021-07-23 20:24:20.774  INFO 1564 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1k  25 Mar 2021]
+2021-07-23 20:24:20.849  INFO 1564 --- [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2021-07-23 20:24:20.849  INFO 1564 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 941 ms
+2021-07-23 20:24:20.871  INFO 1564 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-13 - Starting...
+2021-07-23 20:24:20.881  INFO 1564 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-13 - Start completed.
+2021-07-23 20:24:20.881  INFO 1564 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:~/community'
+2021-07-23 20:24:21.191  INFO 1564 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-07-23 20:24:21.275  INFO 1564 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-07-23 20:24:21.295  INFO 1564 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
+2021-07-23 20:24:21.312  INFO 1564 --- [http-nio-8887-exec-1] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-23 20:24:21.313  INFO 1564 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-23 20:24:21.314  INFO 1564 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-07-23 20:24:21.315  INFO 1564 --- [restartedMain] l.k.c.community.CommunityApplication     : Started CommunityApplication in 1.48 seconds (JVM running for 1105.53)
+2021-07-23 20:24:21.317  INFO 1564 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-07-23 20:24:21.319  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:24:21 CST 2021
+2021-07-23 20:24:21.319  INFO 1564 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-07-23 20:24:21.320  INFO 1564 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-07-23 20:24:21.329  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:24:21 CST 2021
+2021-07-23 20:24:21.343  WARN 1564 --- [http-nio-8887-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'earch' in 'class life.kobefengfeng.community.community.dto.QuestionQueryDTO']
+2021-07-23 20:24:41.314  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:24:41 CST 2021
+2021-07-23 20:24:41.323  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:24:41 CST 2021
+2021-07-23 20:25:01.314  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:25:01 CST 2021
+2021-07-23 20:25:01.315  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:25:01 CST 2021
+2021-07-23 20:25:21.314  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:25:21 CST 2021
+2021-07-23 20:25:21.316  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:25:21 CST 2021
+2021-07-23 20:25:35.407  INFO 1564 --- [Thread-64] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
+2021-07-23 20:25:35.776  INFO 1564 --- [Thread-64] com.zaxxer.hikari.HikariDataSource       : HikariPool-13 - Shutdown initiated...
+2021-07-23 20:25:35.986  INFO 1564 --- [Thread-64] com.zaxxer.hikari.HikariDataSource       : HikariPool-13 - Shutdown completed.
+2021-07-23 20:25:36.137  INFO 1564 --- [restartedMain] l.k.c.community.CommunityApplication     : Starting CommunityApplication using Java 11.0.4 on WIN-20BK8L90EFQ with PID 1564 (C:\code\community\target\classes started by Administrator in C:\code\community)
+2021-07-23 20:25:36.138  INFO 1564 --- [restartedMain] l.k.c.community.CommunityApplication     : No active profile set, falling back to default profiles: default
+2021-07-23 20:25:36.691  INFO 1564 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
+2021-07-23 20:25:36.692  INFO 1564 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-23 20:25:36.692  INFO 1564 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-07-23 20:25:36.692  INFO 1564 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.30] using APR version [1.7.0].
+2021-07-23 20:25:36.693  INFO 1564 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2021-07-23 20:25:36.693  INFO 1564 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2021-07-23 20:25:36.693  INFO 1564 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1k  25 Mar 2021]
+2021-07-23 20:25:36.749  INFO 1564 --- [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2021-07-23 20:25:36.749  INFO 1564 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 607 ms
+2021-07-23 20:25:36.775  INFO 1564 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-14 - Starting...
+2021-07-23 20:25:36.793  INFO 1564 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-14 - Start completed.
+2021-07-23 20:25:36.793  INFO 1564 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:~/community'
+2021-07-23 20:25:37.478  INFO 1564 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-07-23 20:25:37.713  INFO 1564 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-07-23 20:25:37.744  INFO 1564 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
+2021-07-23 20:25:37.783  INFO 1564 --- [restartedMain] l.k.c.community.CommunityApplication     : Started CommunityApplication in 1.708 seconds (JVM running for 1181.997)
+2021-07-23 20:25:37.784  INFO 1564 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-07-23 20:25:37.781  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:25:37 CST 2021
+2021-07-23 20:25:37.787  INFO 1564 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-07-23 20:25:37.788  INFO 1564 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-07-23 20:25:37.785  INFO 1564 --- [http-nio-8887-exec-2] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-23 20:25:37.788  INFO 1564 --- [http-nio-8887-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-23 20:25:37.790  INFO 1564 --- [http-nio-8887-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-07-23 20:25:37.800  INFO 1564 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:25:37 CST 2021
+2021-07-23 20:25:54.170  INFO 4448 --- [restartedMain] l.k.c.community.CommunityApplication     : Starting CommunityApplication using Java 11.0.4 on WIN-20BK8L90EFQ with PID 4448 (C:\code\community\target\classes started by Administrator in C:\code\community)
+2021-07-23 20:25:54.174  INFO 4448 --- [restartedMain] l.k.c.community.CommunityApplication     : No active profile set, falling back to default profiles: default
+2021-07-23 20:25:54.360  INFO 4448 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-07-23 20:25:54.361  INFO 4448 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-07-23 20:25:54.542  WARN 4448 --- [background-preinit] o.s.h.c.j.Jackson2ObjectMapperBuilder    : For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2021-07-23 20:25:56.796  INFO 4448 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
+2021-07-23 20:25:56.813  INFO 4448 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-23 20:25:56.814  INFO 4448 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-07-23 20:25:56.818  INFO 4448 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.30] using APR version [1.7.0].
+2021-07-23 20:25:56.819  INFO 4448 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2021-07-23 20:25:56.819  INFO 4448 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2021-07-23 20:25:56.823  INFO 4448 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1k  25 Mar 2021]
+2021-07-23 20:25:56.995  INFO 4448 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-23 20:25:56.995  INFO 4448 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2631 ms
+2021-07-23 20:25:57.109  INFO 4448 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-07-23 20:25:57.339  INFO 4448 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-07-23 20:25:57.349  INFO 4448 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:~/community'
+2021-07-23 20:25:58.815  INFO 4448 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-07-23 20:25:59.733  INFO 4448 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-07-23 20:25:59.794  INFO 4448 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
+2021-07-23 20:25:59.810  INFO 4448 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:25:59 CST 2021
+2021-07-23 20:25:59.819  INFO 4448 --- [restartedMain] l.k.c.community.CommunityApplication     : Started CommunityApplication in 6.525 seconds (JVM running for 8.718)
+2021-07-23 20:25:59.823  INFO 4448 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-07-23 20:25:59.827  INFO 4448 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-07-23 20:25:59.902  INFO 4448 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:25:59 CST 2021
+2021-07-23 20:26:08.241  INFO 4448 --- [http-nio-8887-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-23 20:26:08.242  INFO 4448 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-23 20:26:08.244  INFO 4448 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-07-23 20:26:08.458  WARN 4448 --- [http-nio-8887-exec-1] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [175] milliseconds.
+2021-07-23 20:26:19.811  INFO 4448 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:26:19 CST 2021
+2021-07-23 20:26:19.814  INFO 4448 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:26:19 CST 2021
+2021-07-23 20:26:39.812  INFO 4448 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:26:39 CST 2021
+2021-07-23 20:26:39.818  INFO 4448 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:26:39 CST 2021
+2021-07-23 20:26:59.812  INFO 4448 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:26:59 CST 2021
+2021-07-23 20:26:59.819  INFO 4448 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:26:59 CST 2021
+2021-07-23 20:27:19.812  INFO 4448 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:27:19 CST 2021
+2021-07-23 20:27:19.821  INFO 4448 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:27:19 CST 2021
+2021-07-23 20:27:39.812  INFO 4448 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:27:39 CST 2021
+2021-07-23 20:27:39.821  INFO 4448 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:27:39 CST 2021
+2021-07-23 20:27:59.811  INFO 4448 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:27:59 CST 2021
+2021-07-23 20:27:59.818  INFO 4448 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:27:59 CST 2021
+2021-07-23 20:28:19.812  INFO 4448 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:28:19 CST 2021
+2021-07-23 20:28:19.817  INFO 4448 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:28:19 CST 2021
+2021-07-23 20:28:39.812  INFO 4448 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:28:39 CST 2021
+2021-07-23 20:28:39.823  INFO 4448 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:28:39 CST 2021
+2021-07-23 20:28:59.813  INFO 4448 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:28:59 CST 2021
+2021-07-23 20:28:59.818  INFO 4448 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:28:59 CST 2021
+2021-07-23 20:29:19.813  INFO 4448 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:29:19 CST 2021
+2021-07-23 20:29:19.817  INFO 4448 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:29:19 CST 2021
+2021-07-23 20:29:39.813  INFO 4448 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:29:39 CST 2021
+2021-07-23 20:29:39.817  INFO 4448 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:29:39 CST 2021
+2021-07-23 20:29:59.833  INFO 4448 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:29:59 CST 2021
+2021-07-23 20:29:59.838  INFO 4448 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:29:59 CST 2021
+2021-07-23 20:30:19.813  INFO 4448 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:30:19 CST 2021
+2021-07-23 20:30:19.827  INFO 4448 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:30:19 CST 2021
+2021-07-23 20:30:39.813  INFO 4448 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:30:39 CST 2021
+2021-07-23 20:30:39.814  INFO 4448 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:30:39 CST 2021
+2021-07-23 20:30:59.822  INFO 4448 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:30:59 CST 2021
+2021-07-23 20:30:59.825  INFO 4448 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:30:59 CST 2021
+2021-07-23 20:31:19.814  INFO 4448 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:31:19 CST 2021
+2021-07-23 20:31:19.817  INFO 4448 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:31:19 CST 2021
+2021-07-23 20:31:39.814  INFO 4448 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:31:39 CST 2021
+2021-07-23 20:31:39.818  INFO 4448 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:31:39 CST 2021
+2021-07-23 20:31:59.814  INFO 4448 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:31:59 CST 2021
+2021-07-23 20:31:59.818  INFO 4448 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:31:59 CST 2021
+2021-07-23 20:32:19.814  INFO 4448 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:32:19 CST 2021
+2021-07-23 20:32:19.816  INFO 4448 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:32:19 CST 2021
+2021-07-23 20:32:39.867  INFO 8828 --- [restartedMain] l.k.c.community.CommunityApplication     : Starting CommunityApplication using Java 11.0.4 on WIN-20BK8L90EFQ with PID 8828 (C:\code\community\target\classes started by Administrator in C:\code\community)
+2021-07-23 20:32:39.872  INFO 8828 --- [restartedMain] l.k.c.community.CommunityApplication     : No active profile set, falling back to default profiles: default
+2021-07-23 20:32:39.987  INFO 8828 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-07-23 20:32:39.987  INFO 8828 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-07-23 20:32:40.036  WARN 8828 --- [background-preinit] o.s.h.c.j.Jackson2ObjectMapperBuilder    : For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2021-07-23 20:32:42.294  INFO 8828 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
+2021-07-23 20:32:42.309  INFO 8828 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-23 20:32:42.310  INFO 8828 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-07-23 20:32:42.313  INFO 8828 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.30] using APR version [1.7.0].
+2021-07-23 20:32:42.314  INFO 8828 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2021-07-23 20:32:42.315  INFO 8828 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2021-07-23 20:32:42.319  INFO 8828 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1k  25 Mar 2021]
+2021-07-23 20:32:42.439  INFO 8828 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-23 20:32:42.440  INFO 8828 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2451 ms
+2021-07-23 20:32:42.477  INFO 8828 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-07-23 20:32:42.652  INFO 8828 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-07-23 20:32:42.659  INFO 8828 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:~/community'
+2021-07-23 20:32:43.447  INFO 8828 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-07-23 20:32:44.084  INFO 8828 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-07-23 20:32:44.133  INFO 8828 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
+2021-07-23 20:32:44.146  INFO 8828 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:32:44 CST 2021
+2021-07-23 20:32:44.155  INFO 8828 --- [restartedMain] l.k.c.community.CommunityApplication     : Started CommunityApplication in 5.011 seconds (JVM running for 6.615)
+2021-07-23 20:32:44.158  INFO 8828 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-07-23 20:32:44.161  INFO 8828 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-07-23 20:32:44.223  INFO 8828 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:32:44 CST 2021
+2021-07-23 20:32:48.209  INFO 8828 --- [http-nio-8887-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-23 20:32:48.210  INFO 8828 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-23 20:32:48.211  INFO 8828 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-07-23 20:32:48.455  WARN 8828 --- [http-nio-8887-exec-1] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [175] milliseconds.
+2021-07-23 20:33:04.147  INFO 8828 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:33:04 CST 2021
+2021-07-23 20:33:04.151  INFO 8828 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:33:04 CST 2021
+2021-07-23 20:33:24.147  INFO 8828 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:33:24 CST 2021
+2021-07-23 20:33:24.151  INFO 8828 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:33:24 CST 2021
+2021-07-23 20:33:44.147  INFO 8828 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:33:44 CST 2021
+2021-07-23 20:33:44.149  INFO 8828 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:33:44 CST 2021
+2021-07-23 20:34:04.147  INFO 8828 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:34:04 CST 2021
+2021-07-23 20:34:04.150  INFO 8828 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:34:04 CST 2021
+2021-07-23 20:34:24.147  INFO 8828 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:34:24 CST 2021
+2021-07-23 20:34:24.156  INFO 8828 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:34:24 CST 2021
+2021-07-23 20:34:40.170  INFO 8828 --- [Thread-7] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
+2021-07-23 20:34:40.535  INFO 8828 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-07-23 20:34:40.776  INFO 8828 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-07-23 20:34:41.071  INFO 8828 --- [restartedMain] l.k.c.community.CommunityApplication     : Starting CommunityApplication using Java 11.0.4 on WIN-20BK8L90EFQ with PID 8828 (C:\code\community\target\classes started by Administrator in C:\code\community)
+2021-07-23 20:34:41.072  INFO 8828 --- [restartedMain] l.k.c.community.CommunityApplication     : No active profile set, falling back to default profiles: default
+2021-07-23 20:34:41.714  INFO 8828 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
+2021-07-23 20:34:41.716  INFO 8828 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-23 20:34:41.716  INFO 8828 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-07-23 20:34:41.717  INFO 8828 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.30] using APR version [1.7.0].
+2021-07-23 20:34:41.717  INFO 8828 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2021-07-23 20:34:41.717  INFO 8828 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2021-07-23 20:34:41.718  INFO 8828 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1k  25 Mar 2021]
+2021-07-23 20:34:41.790  INFO 8828 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-23 20:34:41.791  INFO 8828 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 713 ms
+2021-07-23 20:34:41.820  INFO 8828 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2021-07-23 20:34:41.842  INFO 8828 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2021-07-23 20:34:41.843  INFO 8828 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:~/community'
+2021-07-23 20:34:42.285  INFO 8828 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-07-23 20:34:42.435  INFO 8828 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-07-23 20:34:42.478  INFO 8828 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
+2021-07-23 20:34:42.493  INFO 8828 --- [restartedMain] l.k.c.community.CommunityApplication     : Started CommunityApplication in 1.535 seconds (JVM running for 124.952)
+2021-07-23 20:34:42.495  INFO 8828 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-07-23 20:34:42.507  INFO 8828 --- [http-nio-8887-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-23 20:34:42.508  INFO 8828 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-23 20:34:42.502  INFO 8828 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:34:42 CST 2021
+2021-07-23 20:34:42.508  INFO 8828 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-07-23 20:34:42.510  INFO 8828 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-07-23 20:34:42.511  INFO 8828 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-07-23 20:34:42.520  INFO 8828 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:34:42 CST 2021
+2021-07-23 20:34:44.840  INFO 8828 --- [Thread-11] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
+2021-07-23 20:34:45.033  INFO 8828 --- [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2021-07-23 20:34:45.244  INFO 8828 --- [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2021-07-23 20:34:45.364  INFO 8828 --- [restartedMain] l.k.c.community.CommunityApplication     : Starting CommunityApplication using Java 11.0.4 on WIN-20BK8L90EFQ with PID 8828 (C:\code\community\target\classes started by Administrator in C:\code\community)
+2021-07-23 20:34:45.365  INFO 8828 --- [restartedMain] l.k.c.community.CommunityApplication     : No active profile set, falling back to default profiles: default
+2021-07-23 20:34:45.782  INFO 8828 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
+2021-07-23 20:34:45.783  INFO 8828 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-23 20:34:45.784  INFO 8828 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-07-23 20:34:45.784  INFO 8828 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.30] using APR version [1.7.0].
+2021-07-23 20:34:45.784  INFO 8828 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2021-07-23 20:34:45.784  INFO 8828 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2021-07-23 20:34:45.784  INFO 8828 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1k  25 Mar 2021]
+2021-07-23 20:34:45.836  INFO 8828 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-23 20:34:45.837  INFO 8828 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 468 ms
+2021-07-23 20:34:45.855  INFO 8828 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2021-07-23 20:34:45.866  INFO 8828 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2021-07-23 20:34:45.866  INFO 8828 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:~/community'
+2021-07-23 20:34:46.117  INFO 8828 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-07-23 20:34:46.176  INFO 8828 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-07-23 20:34:46.191  INFO 8828 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
+2021-07-23 20:34:46.205  INFO 8828 --- [restartedMain] l.k.c.community.CommunityApplication     : Started CommunityApplication in 0.888 seconds (JVM running for 128.664)
+2021-07-23 20:34:46.207  INFO 8828 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-07-23 20:34:46.206  INFO 8828 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule start Fri Jul 23 20:34:46 CST 2021
+2021-07-23 20:34:46.209  INFO 8828 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-07-23 20:34:46.210  INFO 8828 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-07-23 20:34:46.208  INFO 8828 --- [http-nio-8887-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-23 20:34:46.211  INFO 8828 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-23 20:34:46.214  INFO 8828 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-07-23 20:34:46.219  INFO 8828 --- [scheduling-1] l.k.c.community.schedule.HotTagTasks     : hotTagSchedule end Fri Jul 23 20:34:46 CST 2021
