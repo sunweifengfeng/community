@@ -60,6 +60,8 @@ ALTER TABLE USER ALTER COLUMN ID BIGINT auto_increment NOT NULL;
 [markdown 开发资料](http://editor.md.ipandao.com/)  
 [ucloud 服务器学习](https://console.ucloud.cn/ufile/ufile)  
 [ucloud ufile](https://github.com/ucloud/ufile-sdk-java)     
+[阮一峰老师广告出租](http://www.ruanyifeng.com/support.html)  
+[流量变现参考网址](http://www.mawen.co/question/228)  
 ## 工具
 [git download](https://git-scm.com/download)  
 [mvn 下载jar](https://mvnrepository.com/artifact/com.squareup.okio/okio/3.0.0-alpha.5) 
